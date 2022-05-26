@@ -1,0 +1,226 @@
+CSS 또는 캐스케이딩 스타일 시트(Cascading Style Sheet)는 마크업 언어가 실제로 표시되는 방법을 기술하는 
+언어로, HTML과 XHTML에 주로 쓰이며,XML에서도 사용할 수 있음.
+
+CSS는 W3C의 표준이며, 레이아웃과 스타일을 정의할 때의 자유도가 높은 언어임.
+
+
+CSS는 웹 사이트에서 사용되는 스타일을 지정하기 위한 언어로, 스타일은 웹의 독창적인 개념이 아니라 웹 
+이전부터 워드프로세스 등에 사용했던 개념임
+
+.
+
+1996년 W3C의 주도하에 첫 번째 CSS 버전인 CSS Level 1이 발표.
+
+1998년에 CSS Level 2가 등장하면서 대부분의 웹 브라우저들이 CSS Level 2를 지원하기 시작
+
+그 후 CSS Level 2의 버그를 수정한 CSS Level 2.1이 2006년에 발표되면서 현재까지 표준으로 사용되고 있음.
+
+CSS Level 3는 CSS Level 2.1과 달리 모든 명세가 포함된 버전이 아닌 모듈 단위로 개발되고 있으며, 표 준화가
+
+모듈 단위로 진행되고 있음. 이 중 몇
+
+몇 모듈은 현재 Recomendation(권고안) 단계에 있으며, Working Draft(초안) 단계에 머물러 있는 모듈도 있음.
+
+
+
+
+[스타일 시트의 구성요소]
+
+샘플 : 선택자,선택자{속성:속성값;속성:속성값;}
+
+· 선택자(Selector)
+- HTML 문서에서 스타일을 정의할 대상을 의미한다.
+- 하나 또는 그 이상의 선택자가 지정될 수 있다.
+- 선택자의 나열은 “,”로 한다.
+
+· 선언(Declaration)
+- 선택자에게 지정한 스타일을 의미한다.
+- 속성(Property)과 속성값(Value)으로 구성된다.
+- 속성과 속성값은 “:”으로 구분한다.
+- 선언은 반드시 “;”으로 끝나야 한다.
+
+1. 전체 선택자(Universal Selector)는 모든 요소를 선택하는 방법으로, "*"를 선택자로 선언.
+
+ex--> *{속성:속성값;}
+
+
+2. 클래스 선택자
+클래스 선택자(Class Selector)는 HTML 요소의 class 속성 값을 참조하여 선택하는 방법.
+이때 class 속성 값은 하나의 HTML 요소에 여러 개를 지정할 수 있기 때문에 다중 class를 선택자로 지정할 수도 있음.
+
+3. 아이디 선택자
+아이디 선택자(ID Selector)는 HTML 요소의 id 속성 값을 참조하여 선택하는 방법.
+이때 id 속성 값은 하나의 HTML 문서에 한 번만 사용할 수 있기 때문에 아이디 선택자를 사용하면 유일한 요소를 선택할 수 있음.
+ 
+
+4. 가상 클래스 선택자(Pseudo–classes Selector)
+가상 클래스 선택자(Pseudo-classes Selector)는 요소의 상태나 상황에 따라 선택하는 방법으로,
+링크의 경우 방문하기 전, 방문한 후, 링크 위에 마우스를 올려놓거나 포커스 시 등의 상황을 선택하여 스타일을 지정할 수 있음.
+또한 언어에 따른 구분이나 마크업 구조에 따라 특정 요소를 선택할 수도 있음.
+동적 가상 클래스(Dynamic pseudo-classes) –:link, :visited, :active, :hover, :focus
+
+
+5. 하위 선택자(Descendant Combinator)
+하위 선택자(Descendant Combinator) 방식은 선택자와 선택자를 공란으로 선언하며, 선행 선택자의 하위 요소 중 후행 선택자
+해당하는 요소를 선택
+하는 방법.
+
+
+6. 자식 선택자(Child Combinator)
+자식 선택자(Child Combinators) 방식은 선행 선택자인 부모 요소 하위에 포함된 후행 선택자인 자식 요소를 선택하는 방법.
+이때 부모 선택자와 자식 선택자는 ">"로 구분하여 선언.
+ex --> #main < div{속성: 속성값;}
+
+7. 형제 선택자(Sibling Combinators)
+형제 선택자(Sibling Combinators)는 기본 형제 선택자(General Sibling Combinators)와 인접 형제 선택자(Adjacent Sibling Co
+bnators)로 구분할 수 있음.
+
+이때 기본 형제 선택자는 선행 선택자와 후행 선택자를 "+"로 구분하여 선언하고, 인접 형제 선택자는 "~"로 구분하여 선언.
+ex --> 선택자 + 선택자{속성:속성값;}
+       선택자 ~ 선택자{속성:속성값;}
+
+8. 선택자 그룹화
+앞에서 살펴본 모든 선택자는 콤마(,)를 사용하여 그룹으로 한 번에 선언할 수 있음. 
+선택자를 그룹으로 선언할 경우, 선언된 모든 선택자에는 동일한 선언이 적용됨.
+
+ex --> 선택자, 선택자{속성:속성값;}
+
+
+
+ [Font 관련 스타일]
+
+- font "값들만“ : 대표속성
+- font-family : 글꼴, 글꼴 이름은 쉼표(,)로 구분, 글꼴 이름이 두 단어 이상이면 큰 따옴표로 묶는다. 브라우저는 앞에 있는 글꼴 부터 보여준다.
+- font-style "normal, italic, oblique" : 기울임꼴을 적용
+- font-variant "normal, small-caps" :
+   small-caps 크기가 작은 대문자
+- font-weight "normal, bold, 100～900" : 글자 굵기
+   normal=400, bold=700, 숫자는 인식 못하는 경우 있음
+- font-size "숫자em(상위 element 크기에 배수), 숫자px" : 글자 크기 유전되지 않음
+
+ 
+
+[Text 관련 스타일]
+
+- line-height "normal, 숫자, 숫자em, %“ : 줄간격
+- text-indent "숫자em, 퍼센트, 숫자“ : 들여쓰기, 음수사용시 내어쓰기
+- text-align "left, right, center, justify" : 텍스트나 이미지 수평정렬
+- text-decoration “none, underline, overline, line-through" : 줄 긋기 유전되지 않음
+- letter-spacing "normal, 숫자em, 숫자“ : 글자 간격
+- text-transform "capitalize, uppercase, lowercase, none" : 영문자 변환 첫글자만 대문자 소문자
+․ vertical-align "baseline, sup, sub, middle, text-top, - top, text-bottom, bottom" :텍스트나 이미지 수직정렬
+
+
+[색상과 배경에 관련된 스타일]
+- color "영문자, RGB“ : 글자 및 밑줄 색
+- background-color "영문자, RGB, transparent" : 배경색
+- background-image "none, url(파일위치)“ : 배경 그림
+- background-repeat "repeat, repeat-x, repeat-y, no-repeat" : 배경이미지 반복 여부
+- background-attachment "scroll, fixed" : 화면이 스크롤 될 때 이동여부
+- background-position "top, bottom, left, center, right, 가로% 세로%“ : 이미지 반복 여부 가로p 세로p(음수 사용됨)
+
+
+
+
+인라인레벨요소
+ img, a, span, strong
+ 주로 내용부분 즉 화면에 표시한 콘텐츠들
+ 한줄에 여러개가 정렬.
+ 자신만 크기를 인식하여 표시함
+ width, height를 적용하여 사용할 수 없다.
+
+블록레벨요소
+ div, p, ul, li, h1~h6........
+ 기본적으로 세로정렬
+ 한줄에는 하나차지합니다 즉 가로폭을 자신이 100%인식함
+ width, height를 적용하여 사용합니다
+
+
+display: 화면 보여주는 방식
+display:none; 화면에서 숨김.
+display:block; 블록레벨요소로 만듬.
+                   (화면에 보여줌)
+display:inline; 인라인레벨로 만듬
+display:inline-block; 인라인레벨이면서 가로값과 세로값이 적용됨.
+
+
+[화면에 보이고 안보이는 스타일속성]
+1.
+display:none; 화면에서 숨김.
+display:block; 화면에 보임.
+
+2.
+visibility:화면에 보이거나 숨기거나 함.
+visibility:hidden; 화면에서 숨김
+visibility:visible; 화면에서 보여줌
+
+3.opacity
+ :0~1, 0:투명도 0을 의미,  0.5:투명도 50%, 1:투명도 100%
+
+
+loat:배치 
+float:left;요소를 왼쪽 배치
+float:right;요소를 오른쪽 배치
+*****웹페이지를 가운데 정렬은 margin: 0 auto;
+
+
+clear: float배치설정을 무시하고 새롭게 배치를 하는 속성
+clear:left;
+clear:right;
+
+margin: 요소의 테두를 기준으로 바깥쪽 여백
+margin: 0 0; 마진의 세로값 가로값
+margin:0 0 0; 위 좌우 아래
+margin: 0 0 0 0; top right bottom left
+margin-top, margin-right, margin-bottom, margin-left 하나하나 마진을 적용할때
+*****두개요소의 마진값이 중복이 될때 큰값이 적용됨.
+main:0 auto; 가운데 배치
+조건: 가로값이 반드시 선언
+      좌우 아무요소 없었야 함
+      float와 같이 선언될 경우 -> float값이 우선이으므로 마진의 가운데 정렬이 안됨
+
+
+padding:요소의 테두를 기준으로 안쪽 여백
+padding: 0 0; 패딩의 세로값 가로값
+padding:0 0 0; 위 좌우 아래
+padding: 0 0 0 0; top right bottom left
+padding-top, padding-right, padding-bottom, padding-left 하나하나 패딩을 적용할때
+*****패딩은 안쪽 여백이므로 값이 요소의 가로값, 세로값에서 벗어나면 요소가 크기가 변화됨
+
+position:요소(태그)를 내가 원하는 위치에 배치
+ 
+top, right, bottom, left(기본으로 top, left를 사용)
+*******position들을 특정한 영역을 기준으로할때는 
+     특정영역의 선택자에게 position:relative; 함
+
+    position:absolute; 절대값으로 원하는 위치에 배치
+    position:relative; 상대적(다른요소에 영향을 받음)으로 원하는 위치에 배치 
+    position:fixed; 원하는 위치에 고정하여 배치
+    position:static; 문서의 흐름에 맞춰서 배치
+
+
+border:선두께 선모양 선색;
+border:2px solid #000000;
+선모양 :dotted dashed double
+
+border-top, border-right, border-bottom, border-left
+
+//선두께를 방향별로 설정
+border-top-width,border-right-width,border-bottom-width,border-left-width
+
+//선색상를 방향별로 설정
+border-top-color,border-right-color,border-bottom-color,border-left-color
+
+//선모양를 방향별로 설정
+border-top-style,border-right-style,border-bottom-style,border-left-style
+
+
+
+
+
+
+
+
+
+
+
