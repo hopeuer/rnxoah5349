@@ -1,0 +1,44 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일시트선언</title>
+    <style>
+        /* 하위선택자 */
+        
+        /* li{ color:blueviolet} 태그선택자 */
+        /* ul li ul li {color:red;} 하위선택자*/
+
+        /* 자식선택자 */
+        ul.main > li{color:aqua;}
+
+        /* 형제선택자 */
+        /* .sub > .mn1 + .mn2{ color:red;} */
+        /* .sub > .mn1 ~ .mn4{ color:red;} */
+        .sub > .mn1 ~ li{ color:red;}
+
+        /* 그룹선택자 */
+        p,a{color:blue;}
+    </style>
+</head>
+<body>
+   <ul class="main">
+       <li class="mn">list</li>
+       <li class="mn">list</li>
+       <li class="mn">list</li>
+       <li class="mn">list
+            <ul class="sub">
+                <li class="mn1">list-1</li>
+                <li class="mn2">list-1</li>
+                <li class="mn3">list-1</li>
+                <li class="mn4">list-1</li>
+            </ul>
+       </li>
+   </ul>
+
+   <p>그룹선택자</p>
+   <a href="#">그룹선택자</a>
+</body>
+</html>
