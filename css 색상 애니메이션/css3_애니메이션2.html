@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           *{margin: 0; padding:0;}
+
+           .box01{ width:100px; height:100px;
+                   background-color: aquamarine;
+                   position: absolute; top:0; left:0;
+                   animation-name: ani01;
+                   animation-delay: 1s;
+                   animation-duration: 10s;
+                   animation-iteration-count: infinite;
+                   animation-direction: alternate;
+                   animation-timing-function:ease-in-out;
+                }
+            @keyframes ani01{
+                from{/*0%*/
+                   position: absolute; top:0; left:0;
+                }
+
+                80%{
+                    position: absolute; top:300px; left:1000px;
+                }
+                to{/*100%*/
+                    position: absolute; top:300px; left:1000px;
+                }
+            }      
+    </style>
+</head>
+<body>
+    <!-- 
+     animation에니메이션을 지정함
+
+        animation-name : 애니메이션 이름을 지정함
+        animation-delay: 애니메이션의 지연시간을 지정함
+        animation-direction:애니메이션의 진행방향 지정함
+            alternate;반대방향으로 진행
+            normal:원래방향으로 진행
+        animation-duration : 에니메이션이 실행시간을 지정함
+        animation-iteration-count : 에니메이션이 반복 회수를 지정함
+        animation-play-state:애니메이션의 재생상태를 지정함
+            paused, animation-play-state:paused;
+        animation-timing-function : 에니메이션이 속도 형태를 지정함
+                linear:시작에서 끝까지 똑같은 속도로 진행
+                ease:처음에는 천천히 시작하고 점점빨라지다가 마지막엔 천천히 끝남
+                ease-in:시작은 느리게
+                ease-out:느리게 끝냄
+                ease-in-out:느리게 시작하고 느리게 끝냄
+                cubic-bezier:직접베이직 함수를 정의해서 사용
+                n에서 사용할 수 있는 값은 0~1사이입니다
+        
+
+
+        keyframes에니메이션의 키프래임을 지정함
+        form : 에니메이션의 시작 프래임를 설정함
+        to : 에니메이션의 시작 프래임를 설정함중간의 키프레임을 %단위로 지정할수 있음 
+     -->
+
+     <div class="box01">box01</div>
+</body>
+</html>

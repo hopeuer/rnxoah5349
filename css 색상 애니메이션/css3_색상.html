@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding:0;}
+        div{ margin-top: 30px;
+             width:100px; height:100px;
+             border:1px solid #000;}
+
+             .color01{background-color: #000000;}    
+             .color02{background-color: aquamarine;}
+             .color03{background-color: hsla(57.17,100%,60%,1);}
+                /* color:hsla(색상, 채도, 명도, 투명도) */
+             .color04{background-color: rgba(308,10,174,1);}
+                /*color:rgba(red, greeen, blue, 투명도)*/
+
+
+             .color05{width:600px; background:linear-gradient(red, yellow);}  
+             .color05-1{width:600px; background:linear-gradient(to right, red, yellow);}  
+             .color05-2{width:600px; background:linear-gradient(to bottom right, red, yellow);}
+             .color05-3{width:600px; background:linear-gradient(45deg, red, yellow);}     
+             .color05-4{width:600px; background:linear-gradient(90deg, red, yellow, green);}    
+             .color05-5{width:600px; background:linear-gradient(0deg, red 50%, yellow 70%, green 95%);
+                       } 
+             .color05-5:hover{width:600px; background:linear-gradient(deg, red 50%, yellow 70%, green 95%);}                 
+
+             /* 
+             파이어폭스 -moz-
+             크롭, 사파리 -webkit-
+             오페라 -o-
+             익스플로러 -ms- 
+             */
+             .color{background:-webkit-linear-gradient(red, yellow);}
+             .color{background:-moz-linear-gradient(red, yellow);}
+             .color{background:-o-linear-gradient(red, yellow);}
+             .color{background:-ms-linear-gradient(red, yellow);}
+
+
+             .color06-1{width:600px; background:radial-gradient(red, yellow, green);}     
+             .color06-2{width:600px; height:600px; background:radial-gradient(red 5%, yellow 15%, green 60%);}  
+             .color06-3-1{width:600px; height:600px; 
+                     background:radial-gradient(closest-side, red , yellow , green );}
+             .color06-3-2{width:600px; height:600px; 
+                     background:radial-gradient(closest-corner, red , yellow , green );}    
+             .color06-4{width:600px; height:300px; background:radial-gradient(circle, red 5%, yellow 15%, green 60%);}                           
+    </style>
+</head>
+<body>
+    <!-- http://www.colorpicker.com/ -->
+    
+    <!-- 한가지색 지정(솔리드) -->
+    <div class="color01">16진법</div>
+    <div class="color02">키워드</div>
+    <div class="color03">hsla</div>
+    <div class="color04">rgba</div>
+
+    <br><br><br><br><br>
+    <!-- 여러가지 색상 지정(그라데이션) -->
+    <div class="color05">gradients</div>
+    <div class="color05-1">gradients1</div>
+    <div class="color05-2">gradients2</div>
+    <div class="color05-3">gradients3</div>
+    <div class="color05-4">gradients4</div>
+    <div class="color05-5">gradients5-5</div>
+    <br><br><br><br>
+    <div class="color06-1">gradients6-1</div>
+    <div class="color06-2">gradients6-2</div>
+    <div class="color06-3-1">gradients6-3-1</div>
+    <div class="color06-3-2">gradients6-3-2</div>
+    <div class="color06-4">gradients6-3-2</div>
+</body>
+</html>

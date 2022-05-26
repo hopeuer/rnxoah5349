@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{height:5000px;}
+     h1{
+       font-size: 150px;
+       color:cadetblue;
+       /* text-shadow: 5px 5px 5px #000;  */
+       text-shadow:0 0 4px #ccc,
+                   0 -3px 4px #ff3,
+                   -1px -9px 11px #f80,
+                   1px -12px 18px #f20;
+     }
+     h2{font-size: 150px;
+        color:cadetblue;
+        transition: all 0.7s;}
+     h2:hover{
+       text-shadow: 3px 3px 3px rgba(0 ,0 ,0, 0.5);
+       
+     }  
+     
+     .box{ width:150px; height:150px;
+           background-color: aquamarine;  
+           box-shadow:10px 10px 5px 5px gray;     
+     }
+     
+     .box02{margin-top:50px;
+          width:150px; height:150px;
+          background-color:#f80;
+          /* border-radius: 50%;} */
+          border-radius:30px 50px 10px 70px;
+          }
+
+      .box03{margin-top:50px;
+          width:150px; height:150px;
+          background-color:#f80;
+          /* opacity:1; */
+          display:block;
+          transition:all 0.5s;} 
+      .box03:hover{/*opacity: 0.2;*/
+            display:none;}   
+
+     .mainimg{width:100%; height:52vw;  /* 1000/1920 100vw */
+               border:1px solid #000;
+               background: url(mainimg.jpg) no-repeat 0 0;
+               background-size:cover;}      
+    </style>
+</head>
+<body>
+    <h1>TEXT-SHADOW</h1>
+    <h2>TEXT-SHADOW</h2>
+    <!-- 
+        text-shadow:[dx] [dy] [bulr] [color]
+        ;텍스트에 그림자를 지정
+
+        dx : 본체와 그림자의 가로방향 거리
+        dy : 본체와 그림자의 세로방향 거리
+        bulr : 그림자의 흐려짐 정도
+        color : 그림자의 색상
+     -->
+
+     <div class="box">box</div>
+     <!-- 
+       box-shadow:[dx] [dy] [bulr] [spread] [set]
+        ;지정된 요소의 그림자를 설정함
+
+        dx : 그림자의 가로방향 위치
+        dy : 그림자의 세로방향 위치
+        bulr : 흐려짐 정도
+        spread : 번짐 정도
+        set : 그림자의 형태
+        •outset : 요소 바깥쪽으로 그림자가 떨어짐 (기본값)
+        •inset : 요소 안쪽으로 그림자가 떨어짐
+      -->
+
+      <div class="box02">border-radius</div>
+      <!-- 
+        border-radius:[length]
+          ;Box Model 외각선의 곡률 지정
+          length : 곡률의 크기 
+          border-top-left-radius / border-top-right-radius / 
+          border-bottom-left-radius/ border-bottom-right-radius으로 개별 지정 가능
+       -->
+
+       <div class="box03">opacity</div>
+       <!-- 
+         opacity:[fx]
+        ;요소의 투명도 지정
+        fx : 요소의 투명도 지정 0 ~ 1 사이 값
+        -->
+
+        <div class="mainimg"></div>
+        <!-- background-size : [x], [y]
+        ;백 그라운 이미지의 크기를 지정한다.
+
+        [x]% [y]% : 적용되는 요소의 크기에 비례하여 배경 이미지 적용
+        [x]px [y]px : 절대 크기로 배경 이미지 적용
+        100%: 배경이미지가 적용된 요소의 크기에 맞춤(크기의 변화가 생기면 배경의사이즈도 변화생김.)
+        auto: 배경이미지의 원래크기를 그대로 유지
+        cover : 배경 이미지를 늘여 적용되는 요소 전체에 표시
+                  배경이미지 영역의 사이즈 바뀔때->  이미지의 가로,세로크기중 작은크기를 기준으로 
+                                                                    배경이미지의 사이즈 변화생김 
+        contain : 배경 이미지의 가로 세로 비율을 맞춰 요소에 표시할수 있는 최대 크기로 표시
+                    배경이미지 영역의 사이즈 바뀔때->  이미지의 가로,세로크기중 큰크기를 기준으로 
+                                                                    배경이미지의 사이즈 변화생김 -->
+</body>
+</html>

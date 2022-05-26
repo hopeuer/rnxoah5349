@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding:0;}
+        body{padding-left: 200px;}
+        div{ margin-top: 30px;
+             width:100px; height:100px;
+             border:1px solid #000;}
+
+             .box01{}
+             .box01 > div{margin-top: 0px; 
+                        border:0px; background-color: aqua;
+                        transform: translate(0px,0px);
+                        transition:all 0.7s;}
+            .box01:hover > div{
+                    transform: translate(500px,500px); 
+            }    
+            
+            
+            .box02{}
+            .box02 > div{border: 0px; margin-top:0px; transition:all 0.7s;
+                background-color: transparent;}
+            .box02:hover > div{border: 0px; margin-top:0px;
+                background-color: blueviolet;
+                /* transform: scale(0.5); */
+                /* transform: scaleX(0.5);
+                transform: scaleY(0.5); */
+                /* transform: scale3d(1.5,1.5,100px); */
+            }
+
+            .box03{}
+            .box03 > div{border: 0px; margin-top:0px; transition:all 0.7s;
+                background-color: transparent;
+                /* transform:rotate(0deg);} */
+                /* transform:rotateY(0deg);} */
+                /* transform:rotateX(0deg); */
+                transform:rotateZ(0deg);}
+            .box03:hover > div{border: 0px; margin-top:0px;
+                background-color: blueviolet;
+                /* transform:rotate(360deg); */
+                /* transform:rotateY(360deg); */
+                /* transform:rotateX(360deg); */
+                transform:rotateZ(360deg);
+            }
+
+            .box04{}
+            .box04 > div{border: 0px; margin-top:0px; transition:all 0.7s;
+                background-color: transparent;
+                transform:skew(0 , 0)}
+            .box04:hover > div{border: 0px; margin-top:0px;
+                background-color: blueviolet;
+                transform:skew(-45deg , 0)}
+            }
+    </style>
+</head>
+<body>
+<!--     
+    transform:요소의 형태를 변경함
+    translate([dx],[dy]) : 지정한 크기 만큼 이동 시킴
+    scale([ds]) : 지정한 배율 만큼 확대함
+    rotate([deg]) : 지정한 각도만큼 회전 시킴
+    skew([degx],[degy]) : 지정한 경사로 기울림
+ -->
+
+  <div class="box01">
+      <div>translate</div>
+  </div>
+
+  <div class="box02">
+    <div> scale</div>
+  </div>
+
+  <div class="box03">
+    <div> rotate</div>
+  </div>
+
+  <div class="box04">
+    <div> skew</div>
+  </div>
+</body>
+</html>

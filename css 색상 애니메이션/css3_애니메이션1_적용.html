@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        .box01{width:100px; height:100px;
+               border:1px solid #000;
+               background-color: aquamarine;
+               color:#000;
+               transition-delay: 0.5s;
+               transition-duration: 1s;
+               transition-property:all;
+               transition-timing-function: ease-in-out;
+             }
+        .box01:hover{ background-color: rgb(61, 87, 78);
+                      color:#fff;
+                      }     
+                      
+        .box02{width:100px; height:100px;
+               border:1px solid #000;
+              
+                }    
+        .box02_in{width:100px; height:100px;
+                  background-color: aquamarine;
+                    /* transition:all 0.7s; */
+                transition-delay: 0.3s;
+                transition-duration: 0.7s;
+                transition-property: all;
+                transition-timing-function: ease-in;}    
+                  
+        .box02:hover .box02_in{ transform: scale(1.2) rotate(45deg);}
+        
+        .box03, .box04, .box05{
+            width:300px; height:80px;
+            margin-top:50px;
+            border:1px solid #000;
+        }
+
+        /* .box03:hover + .box04{ width:100px; 
+            transition-delay: 0.3s;
+            transition-duration: 0.7s;
+            transition-property: all;
+            transition-timing-function: ease-in;
+        } */
+
+        .box03:hover ~ .box05{ width:100px; 
+            transition-delay: 0.3s;
+            transition-duration: 0.7s;
+            transition-property: all;
+            transition-timing-function: ease-in;
+        }
+    </style>
+</head>
+<body>
+    <div class="box01">box01</div>
+    <br><br><br>
+
+    <div class="box02">
+        <div class="box02_in">box02</div>
+    </div>
+
+    <div class="box03">box03</div>
+    <div class="box04">box04</div>
+    <div class="box05">box05</div>
+
+    
+</body>
+</html>

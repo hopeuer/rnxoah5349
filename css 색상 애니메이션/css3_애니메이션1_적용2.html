@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        img{border:0;}
+        a{text-decoration:none; color: #000;}
+        ul,li{list-style: none;}
+
+        #wrap{width:100%;}
+        #header{width:100%; height:120px;
+                padding-top: 70px; box-sizing: border-box;
+                background-color:cadetblue;}
+        #header nav{ margin: 0 auto;  width:1000px; height:50px;}
+        #header nav li{ float: left; width:20%;
+                              text-align:center; line-height:50px;}
+        #header nav li a{ display:block; width: 100%; height:50px;}
+        #header nav li a:hover{background-color: red;
+                               color: #fff;}
+        #header nav:hover + .submenu,.submenu:hover{ height:250px;}                       
+
+        #mainimg{width:100%; height:350px;
+                background-color: burlywood;}      
+        .submenu{width:100%; height:0px;
+                 background-color:cornsilk;
+                 position:absolute; top:120px; left:0px;
+                 z-index:9999;
+                 transition-delay: 0s;
+                 transition-duration: .7s;
+                 transition-property: all;
+                 transition-timing-function: ease-in-out;
+                }          
+    </style>
+</head>
+<body>
+   <div id="wrap">
+       <header id="header">
+            <nav>
+                <ul>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                </ul>
+            </nav>
+            <div class="submenu">submenu</div>
+       </header>
+       <section id="mainimg"></section>
+       
+   </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding:0;}
+        body{padding-left: 200px;}
+        div{ margin-top: 30px;
+             width:100px; height:100px;
+             border:1px solid #000;}
+
+        .box01{ transform:scale(1)}   
+        .box01 > div{margin-top: 0px; border:0px;
+                     background-color: aqua;
+                     font-size:12px}  
+        .box01:hover > div{
+            transform:scale(1.5);
+            background-color:blueviolet;
+            font-size: 25px;
+            transition-delay:2s;
+            transition-duration: 0.7s;
+            transition-property: all;
+            transition-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<!--     
+ransition:[변환속성],[에니메이션 시간];class나 
+선택상태 변경되어 속성이 변화할 때 상태 변화를 부드럽게 에니메이션함
+변환속성 : 변환할 속성 all로 지정되면 모든 속성이 영향받음
+에니메이션 시간 : 에니메이션 시간을 지정함   
+
+transition-delay: 애니메이션의 지연시간을 지정함
+transition-duration : 에니메이션이 실행시간을 지정함
+transition-property : 어떤 속성을 변형할지 지정함
+transition-timing-function : 에니메이션이 속도 형태를 지정함
+  linear:시작에서 끝까지 똑같은 속도로 진행
+  ease:처음에는 천천히 시작하고 점점빨라지다가 마지막엔 천천히 끝남
+  ease-in:시작은 느리게
+  ease-out:느리게 끝냄
+  ease-in-out:느리게 시작하고 느리게 끝냄
+  cubic-bezier:직접베이직 함수를 정의해서 사용
+  n에서 사용할 수 있는 값은 0~1사이입니다
+ -->
+
+  <div class="box01">
+      <div>translate</div>
+  </div>
+
+  
+</body>
+</html>

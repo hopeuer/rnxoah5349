@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding:0;}
+        img{border:0;}
+        ul,li{
+            list-style: none;
+        }
+        a{text-decoration: none;}
+
+
+        #tab{ width:400px;
+              height:530px;
+              border:1px solid #000;
+             position: relative;}
+        input{display:none;}
+        label{display:block; float:left;
+              width:100px; height:30px;
+              text-align: center; line-height:30px;}
+        label.btn1{background-color:aquamarine ; }
+        label.btn2{background-color:blueviolet ;}
+        label.btn3{background-color:burlywood ;}
+        label.btn4{background-color:cadetblue ;}
+
+        #tab > div{ width:400px; height:500px; display:none;
+                    position: absolute;
+                    top:30px; left:0;}
+        #tab .box01{background-color:aquamarine; z-index:400}
+        #tab .box02{background-color:blueviolet; z-index:300}
+        #tab .box03{background-color:burlywood; z-index:200}
+        #tab .box04{background-color:cadetblue; z-index:100}
+        #tab1:checked ~ .box01{display: block;}
+        #tab2:checked ~ .box02{display: block;}
+        #tab3:checked ~ .box03{display: block;}
+        #tab4:checked ~ .box04{display: block;}
+        /* input{display:none;}
+        #tab1:checked ~ .box01{display: block;} */
+    </style>
+</head>
+<body>
+    <div id="tab">
+     <label for="tab1" class="btn1">Tabmenu1</label>
+     <input type="radio" id="tab1" name="tab" checked>
+     <label for="tab2" class="btn2">Tabmenu2</label><input type="radio" id="tab2" name="tab">
+     <label for="tab3" class="btn3">Tabmenu3</label><input type="radio" id="tab3" name="tab">
+     <label for="tab4" class="btn4">Tabmenu4</label><input type="radio" id="tab4" name="tab">
+     <div class="box01">box01</div>
+     <div class="box02">box02</div>
+     <div class="box03">box03</div>
+     <div class="box04">box04</div>
+    </div>
+</body>
+</html>
