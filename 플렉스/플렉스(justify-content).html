@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-items</title>
+    <style>
+        * {
+            margin:0px;
+            padding:0px;
+        }
+
+        h3{text-align: center;}
+        .wrapper{margin: 0 auto;
+                 width:500px; height:50px;
+                 border:3px solid red;
+                 display:flex;
+                 }
+        .wrapper > div{ width:100px; 
+                        border:2px solid #000;
+                        background-color: aquamarine;}
+        #container1{ justify-content: flex-start;} 
+        #container2{ justify-content: flex-end;}         
+        #container3{ justify-content: center;}  
+        #container4{ justify-content: space-around;}  
+        #container5{ justify-content: space-between;} 
+        #container6{ justify-content: space-evenly;} 
+    </style>
+</head>
+<body>
+    <h3>justify-content : flex-start(기본값)</h3>
+    <div id="container1" class="wrapper">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+
+    <h3>justify-content : flex-end</h3>
+    <div id="container2" class="wrapper">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+
+    <h3>justify-content : center</h3>
+    <div id="container3" class="wrapper">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+
+    <h3>justify-content : space-around</h3>
+    <div id="container4" class="wrapper">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+
+
+    <h3>justify-content : space-between</h3>
+    <div id="container5" class="wrapper">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+
+    <h3>justify-content : space-evenly</h3>
+    <div id="container6" class="wrapper">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+</body>
+</html>
