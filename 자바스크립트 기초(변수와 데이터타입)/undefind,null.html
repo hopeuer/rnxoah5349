@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터타입 - undefined,null</title>
+</head>
+<body>
+    <h2>데이터타입 - undefined,null</h2>
+    <p>
+        undefined : 타입이 정해지지 않은 것을 의미합니다. 
+                 -> 변수 선언 후 값이 정해지지 않은 경우
+        null : 값이 정해지지 않은 것을 의미합니다. 
+          ->  null로 변수를 초기화 한 경우 -> object 타입
+    </p>
+    
+    </p>
+    <script>
+      'use strict';
+      let num;
+      console.log(num);  // undefined
+      console.log(typeof(num)); // undefined
+
+      let obj1 = null;
+      console.log(obj1);  // null
+      console.log(typeof(obj1)); // object
+
+      let obj2 = {};
+      console.log(obj2);          // {}
+      onsole.log(typeof(obj2));  // object
+    </script>
+    
+</body>
+</html>

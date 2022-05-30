@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터타입 - 객체형</title>
+</head>
+<body>
+    <h2>데이터타입 - 객체형</h2>
+    <p>
+        여러 속성을 하나의 변수에 저장할 수 있도록 해주는 데이터 타입입니다.
+         -> key / value pair 구조
+         let student = {"name":"김사과", "age":20};
+                        --------------   --------
+                         key    value   key  value
+    </p>
+    
+    </p>
+    <script>
+      'use strict';
+      const dog = {"name":"루시","age":10, "weight":2.5 } 
+      //선택자{속성:속성값; 속성:속성값;}
+      
+      console.log(dog);
+      console.log(`이름 : ${dog.name}`); //루시
+      console.log(`나이 : ${dog.age}`);  //10
+      console.log(`몸무게 : ${dog.weight}`); //2.5
+
+      //객체속성을 수정
+      dog.weight = 3;
+      console.log(`몸무게 : ${dog.weight}`); 
+      // value는 변경 가능
+
+      dog = { "name":"뽀미", "age":5, "weight":6 };
+      //const는 새로운 객체를 참조할 수 없음
+      console.log(dog);
+
+
+
+
+    </script>
+    
+</body>
+</html>

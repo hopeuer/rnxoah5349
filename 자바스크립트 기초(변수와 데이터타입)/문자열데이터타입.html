@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터타입 - 문자열형</title>
+</head>
+<body>
+    <h2>데이터타입 - 문자열형</h2>
+    <script>
+      'use strict';
+      const num1 = 10; // 숫자형
+      const num2 = 5; // 숫자형
+      
+      const str1 = "Hello JavaScript";    // 문자열형
+      const str2 = "Hello World";         // 문자열형
+      const str3 = "10";                  // 문자열형
+
+            // const hap = num1 + "";
+
+      console.log(num1 + num2); //숫자연산(숫자형들은 연산처리됨)
+      console.log(num1 + str1); //문자연산(결함) 
+      console.log(num1 + ''); //문자연산(결함) -> 숫자형 문자열형 변환
+
+      console.log(typeof(num1)); // 숫자형
+      console.log(typeof(num1 + ""));  // 문자열형
+
+      console.log(str1 + '' + str2); // 문자연산
+      console.log(str1 + "\n" + str2);
+      console.log(`자바스크립트에서는 문자열을 쌍따옴표, 따옴표로 둘러싸인 문자의 집합을 의미합니다.`);
+
+      console.log(num1 + " + " + num2 + " = " + (num1 + num2)); 
+      // 10 + 5 = 15
+      console.log(`${num1} + ${num2} = ${num1 + num2}`)
+    </script>
+    
+</body>
+</html>

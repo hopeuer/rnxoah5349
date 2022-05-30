@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>암시적 타입변환</title>
+</head>
+<body>
+    <h2>암시적 타입변환</h2>
+    <p>
+        타입의 값을 기대하는 곳에 다른 타입의 값이 오면 
+        자동으로 타입을 변환해서 사용합니다.
+    </p>
+    
+    </p>
+    <script>
+      'use strict';
+      const a = 10 + "문자열";
+      console.log(a); 
+      //10문자열 숫자형을 문자열과 결합을 하면 문자열데이터로 변환
+      const b = "3" * "5";
+      console.log(b);
+      //문자열 숫자끼리 연산했을때 숫자형 연산이 되면서 숫자형으로 변환
+      const c = 10 - "문자열";
+      console.log(c);
+      // NaN(Not a Number)
+      //정의되지 않은 값이나 표현할 수 없는 값을 뜻합니다.
+      //예를들어 0을 0으로 나누거나, 숫자로 변환할 수 없는 연산을 시도한 경우 반환합니다.
+      const d = "10" - 20;
+      console.log(d);
+
+
+
+    </script>
+    
+</body>
+</html>
