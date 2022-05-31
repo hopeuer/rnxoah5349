@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항연산자</title>
+</head>
+<body>
+    
+    <script>
+      'use strict';
+       var name = prompt('이름을 입력하세요');
+       var kor = Number(prompt('국어점수를 입력하세요'));
+       var eng = Number(prompt('영어점수를 입력하세요'));
+       var math = Number(prompt('수학점수를 입력하세요'));
+       console.log('데이터값입력');
+       
+       const total = kor + eng + math;
+       const avg = total / 3;
+       console.log('연산처리');
+
+       document.write(`<h2>${name}님 성적표</h2>`);
+       document.write(`<p>국어점수 : ${kor} </p>`);
+       document.write(`<p>영어점수 : ${eng}} </p>`);
+       document.write(`<p>수학점수 : ${math} </p>`);
+       document.write(`<p>총점 : ${total} </p>`);
+       document.write(`<p>평점 : ${avg} </p>`);
+       console.log('결과값 화면출력');
+    </script>
+</body>
+</html>

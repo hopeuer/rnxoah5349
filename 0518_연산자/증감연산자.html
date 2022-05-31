@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>증감연산자</title>
+</head>
+<body>
+    <h2>증감연산자</h2>
+    <p>
+        증감 연산자는 1씩 값을 증가시키거나 또는 감소시킬 때 사용하는 연산자입니다. <br>
+        연산자의 위치가 어디에 있는지에 따라 결과가 달라질 수 있습니다.<br>
+        ++변수 : 변수의 값을 1증가시킨 후, 다음 연산을 진행(전위연산자)<br>
+        변수++ : 먼저 연산을 수행한 후, 변수의 값을 1증가 시킴(후위연산자)<br>
+        --변수 : 변수의 값을 1감소시킨 후, 다음 연산을 진행(전위연산자)<br>
+        변수-- : 먼저 연산을 수행한 후, 변수의 값을 1갑소 시킴(후위연산자)<br>
+        
+        let a = 10;<br>
+        ++a;    // 11<br>
+        a++;    // 11<br>
+       
+    </p>
+    <script>
+        'use strict';
+         let a = 10;
+         let b = 20;
+         let c = 3;
+         document.write('<h2>'+'자바스크립트' + '</h2>' + '<br>');
+         document.write(++a + '<br>');//10 -> 11
+         document.write(a++ + '<br>'); // 12 -> 11(12)
+         document.write(c++ + '<br>'); //3 -> 3(4)
+         document.write(++a + b++ +'<br>')//13 + 20(21)
+         document.write(++a + ++b); //14 + 22 => 36
+    </script>
+</body>
+</html>
