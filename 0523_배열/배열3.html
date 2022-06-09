@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+  "use strict";
+  const cnt = Number(prompt('입력받을 숫자의 개수를 입력하세요'));// 5를 입력
+  let idx = 0;
+  let arr = [];
+  
+  //배열요소를 입력하기 위해 조건문 사용
+  while(idx < cnt){ // 조건은 idx값이 5보다 작을때까지 실행  
+  arr[idx] = Number(prompt(`${idx + 1}번째 숫자를 입력하세요`));
+  idx++;  
+  }
+
+  //최대값과 최소값이 저장될 변수 선언
+  // 90 50 70 100 60
+  let max = arr[0];
+  let min = arr[0];
+
+  for(let i=1; i<arr.length; i++){
+    if(max < arr[i]){ 
+        max = arr[i]; //최대값을 저장
+    }   
+    if(min > arr[i]){ //50 
+        min = arr[i]; //최소값을 저장 
+    }
+  }
+
+  console.log(`입력한 수 ${arr}에서 가장 큰 값은 ${max}입니다.`);
+  document.write(`입력한 수 ${arr}에서 가장 큰 값은 ${max}입니다.<br>`);
+
+  console.log(`입력한 수 ${arr}에서 가장 작은 값은 ${min}입니다.`);
+  document.write(`입력한 수 ${arr}에서 가장 작은 값은 ${min}입니다.`);
+ </script>   
+ 
+</body>
+</html>

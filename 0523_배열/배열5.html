@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+  "use strict";
+  let arr1 = ['김사과', 20, 160.5, true];
+  console.log(arr1);
+
+  console.log('-------------------------------------');
+
+  for(let i in arr1){
+      console.log(i, arr1[i]);
+  }
+  
+  console.log('-------------------------------------');
+
+  for(let i of arr1){
+      console.log(i);
+  }
+
+  console.log('-------------------------------------');
+
+  arr1.forEach(function(item, idx, arr){
+    console.log(item, idx, arr);
+  });
+ </script>   
+ 
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+  "use strict";
+
+  const cnt = Number(prompt('입력받을 숫자의 개수를 입력하세요'));
+  let idx = 0;
+  let arr = [];//배열공간선언
+  //let arr = [100,200,300];
+
+  while(idx < cnt){
+    arr[idx] = Number(prompt(`${idx+1}번째 숫자를 입력하세요`));
+    // arr[0] = Number(prompt(`1번째 숫자를 입력하세요`));
+    // arr[1] = Number(prompt(`2번째 숫자를 입력하세요`));
+    // arr[2] = Number(prompt(`3번째 숫자를 입력하세요`));
+    // ..
+    // arr[4] = Number(prompt(`5번째 숫자를 입력하세요`));
+
+  
+    //조건에 대한 증가치 연산
+    idx++;
+  }
+  
+  for(let i = 0; i < arr.length; i++){
+      document.write(arr[i]);
+  }
+
+
+ </script>   
+ 
+</body>
+</html>
