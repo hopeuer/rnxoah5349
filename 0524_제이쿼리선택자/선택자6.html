@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+     *{margin:0; padding:0; 
+       text-decoration:none; 
+       border:0;
+       list-style: none;
+       font-size:30px}
+      
+            
+    </style>
+    <script src="./js/jquery.js"></script>
+    
+</head>
+<body>
+    <script>
+     $(document).ready(function(){
+       //parent() 부모엘리먼트를 찾아감(해당요소의 바로한칸위 요소를 의미)
+       //parents() 조상 엘리먼트를 찾아감
+    
+       //var el = $('#wrapper #childEl').parent('ul');
+       //el.css('color', 'red');
+
+          var childEl = $('#childEl');
+		  var parentEl = childEl.parents('.parentEl');
+		  parentEl.css('color', 'red');
+     })
+     
+    </script>
+    
+    <div id="wrapper">
+        <ul class="parentEl">
+            <li>1</li>
+            <li>2</li>
+            <li>3
+                <ul id="parentEl">
+                    <li>3-1</li>
+                    <li>3-2</li>
+                    <li id="childEl">3-3</li>
+                    <li>3-4</li>
+                </ul>
+            </li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

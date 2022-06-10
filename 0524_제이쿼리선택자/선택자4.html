@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+     *{margin:0; padding:0; 
+       text-decoration:none; 
+       border:0;
+       list-style: none;}
+      
+     #main{width:600px; height:30px;
+           border:1px solid #ccc;
+           margin: 200px 0 0 200px;
+           }
+     #main > li {float:left; width:150px; height:30px;
+                 border-right:1px solid #ccc;
+                 box-sizing: border-box;
+                 position: relative;}
+     #main > li:last-child{border-right:0;}
+     #main > li > a{display: block; height:30px;
+                    text-align: center; line-height: 30px;
+                    background-color: violet;}
+     #main .sub{ position: absolute; top:30px; left:0;
+                 width:100%}  
+     #main .sub > li{line-height: 30px; 
+                     text-align: center;
+                     border-bottom:1px solid #ccc;}    
+     #main .sub a{display: block;
+                  height:30px; background-color: thistle;}        
+    </style>
+    <script src="./js/jquery.js"></script>
+    
+</head>
+<body>
+    <script>
+     $(document).ready(function(){
+        //초기값으로 서브 숨김 설정 
+        $('.sub').css({display:'none'});
+
+        //   $('#main > li').click(function(){//해당되는 버튼 클릭이벤트 했을때
+        //      //현재 보이는 sub숨김 
+        //      $('.sub').css({display:'none'});
+        //      $(this).find('.sub').css({display:'block'});
+        //    find는 현재 이벤트가 잃어나거나 특정요소를 기준으로 했을때 그 안에 있는 요소
+        //   });
+        
+
+        $('#main > li > a').click(function(){//해당되는 버튼 클릭이벤트 했을때
+             //현재 보이는 sub숨김 
+             //$('.sub').css({display:'none'});
+             $('.sub').each(function(){
+                 if($(this).css('display') == 'block'){//$(this)는 each문에 의해 실행중인 .sub를 의미
+                    $(this).css({display:'none'});
+                 }
+             })
+
+             $(this).next('.sub').css({display:'block'});
+             //next는 현재 이벤트가 잃어나거나 특정요소를 기준으로 했을때 다음에 있는 요소
+        });
+     })
+     
+    </script>
+    
+    <ul id="main">
+     <li class="el"><a href="#">menu1</a>
+        <!-- 1번메뉴 -->
+         <ul class="sub sub1" title="attr">
+              <li id="i01"><a href="#">s_menu</a></li>
+              <li><a href="#">s_menu</a></li>
+              <li><a href="#">s_menu</a></li>
+              <li><a href="#">s_menu</a></li>
+         </ul>
+     </li>
+     <li><a href="#">menu2</a>
+        <!-- 2번메뉴 -->
+         <ul class="sub" id="el">
+            <li class="first"><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li class="list"><a href="#">s_menu</a></li>
+         </ul>
+    </li>
+    <li><a href="#">menu3</a>
+        <!-- 3번메뉴 -->
+        <ul class="sub">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+    </li>
+    <li><a href="#">menu4</a>
+        <!-- 4번메뉴 -->
+        <ul class="sub">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+    </li>
+    </ul>
+
+
+</body>
+</html>

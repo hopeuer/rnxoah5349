@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <script src="./js/jquery.js"></script>
+</head>
+<body>
+    <script>
+     $(document).ready(function(){
+     //짝수열(even) 홀수열선택(odd)  
+        var el = $('#el > li:even');
+        var el1 = $('#el > li:odd');
+        el.css({backgroundColor:'red'});
+        el1.css({backgroundColor:'blue'});
+
+     //형제요소중에 몇번째 (시작은 0부터)
+      //var el = $('#el > li:eq(1)')
+      //el.css({backgroundColor:'red'});
+
+     //형제요소중 첫번째, 마지막번째 선택   
+     //    var el_first = $('#el > li:first a');
+     //    var el_last = $('#el > li:last a');
+     //    el_first.css({color:'red'});
+     //    el_last.css({color:'green'});
+     
+
+     //태그안에 있는 속성을 찾았어 적용 
+     // $('[title=attr]').css({backgroundColor:'red'});
+      
+       
+     });
+    </script>
+
+    <ul id="main">
+     <li><a href="#">menu1</a>
+        <!-- 1번메뉴 -->
+         <ul class="sub" title="attr">
+              <li id="i01"><a href="#">s_menu</a></li>
+              <li><a href="#">s_menu</a></li>
+              <li><a href="#">s_menu</a></li>
+              <li><a href="#">s_menu</a></li>
+         </ul>
+     </li>
+     <li><a href="#">menu2</a>
+        <!-- 2번메뉴 -->
+         <ul class="sub" id="el">
+            <li class="first"><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li class="list"><a href="#">s_menu</a></li>
+         </ul>
+    </li>
+    <li><a href="#">menu3</a>
+        <!-- 3번메뉴 -->
+        <ul class="sub">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+    </li>
+    <li><a href="#">menu4</a>
+        <!-- 4번메뉴 -->
+        <ul class="sub">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+    </li>
+    </ul>
+
+
+</body>
+</html>
