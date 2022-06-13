@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{cursor:pointer;}
+    </style>
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('p').mousedown(function(){ 
+               $(this).after('<p style="color:red"><b>마우스버튼down</b></p>')
+            });
+            $('p').mouseup(function(){
+                $(this).after('<p style="color:blue"><b>마우스버튼up</b></p>')
+            })
+        }); 
+    </script>
+</head>
+<body>
+    <p><b>여기를 눌러 보세요</b></p>
+    
+</body>
+
+</html>
