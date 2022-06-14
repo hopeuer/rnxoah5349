@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체생성</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        //리터럴 표기법
+        //장점: 빠르게 만듬
+        //단점: 객체를 여러개 만들기 힘듬
+
+        const Car = {
+            name: "소나타",
+            color: "black",
+            start: function(){
+                return "시동을 켭니다"
+            }
+        }
+      console.log(Car.name);
+      console.log(Car.color);
+      console.log(Car.start()); //속성안에 있는 함수를 호출
+
+      //생성자를 이용한 객체 생성
+      //장점: 객체를 여러개 만들기 편함
+        function Dog(name, color){
+            this.name = name;
+            this.color = color;
+            this.sleep = function() {
+                return `${this.name}가 잠을 잡니다`;
+            };
+        }
+        //생성자 1
+       const Rucy = new Dog('루시', '흰색');
+        console.log(Rucy.name);
+        console.log(Rucy.color);
+        console.log(Rucy.sleep());
+
+        //생성자 2
+
+        const PPomi = new Dog('뽀미', '검은색');
+        console.log(PPomi.name);
+        console.log(PPomi.color);
+        console.log(PPomi.sleep());
+    </script> 
+</body>
+</html>

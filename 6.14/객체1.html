@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 범위</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+       const dog = {
+        name:'루시',
+        age:10,
+        color:'white',
+        weight:3.5,
+
+    }
+
+       console.log(dog.name);
+       console.log(dog.age);
+       console.log(dog.color);
+       console.log(dog.weight);
+
+       console.log(dog["name"]);
+       console.log(dog["age"]);
+       console.log(dog["color"]);
+       console.log(dog["weight"]);
+
+       let arr = [10, 20, 30, 40, 50];
+       for(let i in arr){
+        console.log(i);
+        console.log(arr[i]);
+       }
+
+       //객체를 반복해서 출력하기
+       console.log('-----------------------------');
+       for(let i in dog){
+        console.log(i);
+        console.log(dog[i]);
+       }
+    </script> 
+</body>
+</html>
