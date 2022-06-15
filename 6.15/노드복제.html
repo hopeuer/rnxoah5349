@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드복제</title>
+</head>
+<body>
+    <h2>노드의 복제</h2>
+    <h3 id="item">복제될 아이템입니다.</h3>
+   <div id="list">
+    <p>HTML</p>
+    <p>CSS</p>
+    <p>JavaScript</p>
+   </div>
+
+    <button onclick="cloneElement()">노드 복제</button>
+
+  
+
+    <script>
+        'use strict';
+        //cloneNode(): 기존의 존재하는 노드와 동일한 새로운 노드를 생성
+        const cloneElement = function(){
+            const parent = document.getElementById('list');
+            const originItem = document.getElementById('item');
+            parent.appendChild(originItem, cloneElement(true));
+        }
+      
+       
+    </script>
+
+
+</body>
+</html>

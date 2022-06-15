@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드교체</title>
+</head>
+<body>
+    <h2>노드의 교체</h2>
+    <div id="parent">
+        <p id="first">김사과</p>
+        <p>오렌지</p>
+        <p>반하나</p>
+    </div>
+    <p id="second">이메론</p>
+    <hr/>
+    <p id="text">제가 좋아하는 과일은 사과입니다.</p>
+
+    <button onclick="changeNode()">요소 노드 교체</button>
+    <button onclick="changeText()">텍스트 노드 교체</button>
+  
+
+    <script>
+        'use strict';
+        //replaceChild(): 기존의 존재하는 노드와를 새로운 요소 노드로 교체할 수 있음
+
+       
+        
+        const changeNode = function(){
+            const parent = document.getElementById('parent');
+            const first = document.getElementById('first');
+            const second = document.getElementById('second');
+            parent.replaceChild(second, first);
+        }
+      
+        //replaceData():텍스트 노드의 텍스트 데이터를 교체할 수 있음
+
+        const changeText = function(){
+            const text = document.getElementById('text').firstChild
+            text.replaceData(12, 2, '메론');
+        
+        }
+    </script>
+
+
+</body>
+</html>

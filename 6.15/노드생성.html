@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드생성</title>
+</head>
+<body>
+    <h2>노드의 생성</h2>
+    <p id="el">새로운 문장이 이 문장 앞에 추가됩니다.</p>
+    <p id="attr">이 단락에 새로운 문장이 추가됩니다.</p>\
+    <p id="text"></p>
+
+
+
+    <button onclick="creatNode()">노드추가1</button>
+    <button onclick="createAttr()">노드추가2</button>
+    <button onclick="createText()">텍스트추가</button>
+
+    <script>
+        'use strict';
+
+        //createElement(): 새로운 요소 노드를 만듬
+        const creatNode = function(){
+            const elNode = document.getElementById('el');
+            const newNode = document.createElement('p'); //<p></p>
+            newNode.innerHTML= '<b>새로운 요소입니다</b>';
+            //<p><b>새로운 요소입니다</b></p>
+
+            document.body.insertBefore(newNode, elNode);
+        }
+
+        //createAttr: 새로운 속성 노드를 만듬
+        const createAttr = function(){
+            const attr = document.getElementById('attr');
+            const newAttr = document.createAttribute('style'); //style=''
+            newAttr.value = 'color:white; background-color:deeppink;'
+            //style='color:white; background-color:deeppink;'
+            attr.setAttributeNode(newAttr);
+        }
+
+        //createTextNode: 새로운 텍스트 노드를 만듬
+        const createText = function(){
+            const textNode = document.getElementById('text');
+            const newText = document.createTextNode('새로운 텍스트입니다');
+            textNode.appendChild(newText);
+            
+        }
+    </script>
+
+
+</body>
+</html>
