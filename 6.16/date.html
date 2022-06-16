@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date 객체</title>
+</head>
+<body>
+    <h2>date 객체</h2>
+
+    <script>
+        'use strict'
+        console.log(new Date);
+        console.log(new Date(21,4,4)); //1921,4,4
+        console.log(new Date(2021,3,4,11,56,0)); // 4월 -> 3
+        console.log(new Date(40000000000));
+
+        const date = new Date();
+        console.log(`현재년도:${date.getFullYear()}`);
+        console.log(`현재 월:${date.getMonth()+1}`);
+        console.log(`현재 일:${date.getDate()}`);
+        
+        console.log(`현재 시간:${date.getHours()}`);
+        console.log(`현재 분:${date.getMinutes()}`);
+        console.log(`현재 초:${date.getSeconds()}`);
+    </script>
+</body>
+</html>

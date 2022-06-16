@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<body>
+    <h2>setInterval</h2>
+
+    <script>
+        'use strict';
+        
+        const hi = function(){
+            console.log('안녕하세요');
+        }
+        const clearinter = function(){
+            console.log('h1 함수가 중지되었습니다');
+            clearInterval(si);
+        }
+
+        const si = window.setInterval(hi, 2000);
+        
+    </script>
+    <button onclick="clearinter()">중지</button>
+</body>
+</html>
