@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const object = {
+            name:'혼자 공부하는 파이썬',
+            price:18000,
+            publisher:'한빛미디어'
+        
+        }
+
+        // var current = ${'.btn}
+        const {name,price} = object;
+        console.log('속성 이름 그대로 꺼내서 출력하기');
+        console.log(name,price);
+
+        const {a=name,b=price} = object;
+        console.log('속성 이름 그대로 꺼내서 출력하기');
+        console.log(a,b);
+
+    </script>
+</body>
+</html>

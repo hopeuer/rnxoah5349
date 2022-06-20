@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{padding: 50px;}
+        .container{margin-top: 40px;}
+        .ball{width: 30px; height: 30px;
+              border-radius: 50%;
+              background-color: aquamarine;
+              position: absolute;
+              top:200px; left: 200px;
+              cursor: pointer;
+              transition: all o.5s ease-in-out;}
+        .on{transform: scale(3);}
+        .box{margin-top: 100px; background-color: aqua;}
+    </style>
+</head>
+<body>
+    <script>
+        'use strict';
+        window.addEventListener('load', function(){
+            const newNode = document.createElement('div'); //div 태그 생성(미리 스타일 선언)
+            // newNode.classList.add('box'); //속성값 적용
+
+            newNode.setAttribute.('class', 'box'); //속성값 설정
+            // newNode.getAttribute.('class', 'box');//newNode의 속성값 갖고 오기
+            newNode.innerText('waiting event!!')//새로 생성된 태그내에 글자 내용 추가
+
+            //추가된 태그에 추가할 위치를 설정
+
+            const body = document.body;
+            body.appendChild(newNode);//새로 생성된 태그를 body에 추가 자식요소 중에 마지막에 추가
+
+            const ball = document.querySelector('ball'); 
+           
+            ball.addEventListener('mouseover', function(){
+                newNode.inner Text='mouseover event!!!';
+            });
+            ball.addEventListener('mouseout', function(){
+                newNode.inner Text='mouseout event!!!';
+            });
+
+            
+        });
+        
+            //자바스크립트 애니메이션 스타일을 사용해서 함 -> 반드시 transition 적용이 되었어야 함
+            //classList.add('클래스명') -> 클래스 적용
+            //classList.remove('클래스명') -> 클래스 미적용
+            //classList.toggle('클래스명') -> 현재 클래스 적용 상태의 반대 상태를 적용
+
+    </script>
+    <body>
+        <div class="container">
+        
+            <div class="ball"></div>
+        </div>
+    </body>
+</body>
+</html>

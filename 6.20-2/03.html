@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .container{margin-top: 40px;}
+        .ball{width: 30px; height: 30px;
+              border-radius: 50%;
+              background-color: aquamarine;
+              position: absolute;
+              top:200px; left: 200px;
+              cursor: pointer;
+              transition: all o.5s ease-in-out;}
+        .on{transform: scale(3);}
+    </style>
+</head>
+<body>
+    <script>
+        'use strict';
+        window.addEventListener('load', function(){
+            const ball == document.querySelector('.ball');
+
+            ball.addEventListener('dblclick', function(e){
+                //$(this) -> e.target
+                e.target .classList.toggle('on')
+            });
+        });
+        
+    </script>
+    <body>
+        <div class="container">
+            <div class="ball"></div>
+        </div>
+    </body>
+</body>
+</html>

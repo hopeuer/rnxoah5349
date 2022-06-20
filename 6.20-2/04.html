@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{padding: 50px;}
+        .container{margin-top: 40px;}
+        .ball{width: 30px; height: 30px;
+              border-radius: 50%;
+              background-color: aquamarine;
+              position: absolute;
+              top:200px; left: 200px;
+              cursor: pointer;
+              transition: all o.5s ease-in-out;}
+        .on{transform: scale(3);}
+    </style>
+</head>
+<body>
+    <script>
+        'use strict';
+        window.addEventListener('load', function(){
+            const btnList = document.querySelectorAll('button'); //리스트지정 -> 이벤트가 함수 1개 설정
+            const ball == document.querySelector('.ball');
+            let x = 200;
+            let y = 200;
+            
+            for(let i =0; i <btnList.length; i++)
+            btnList[i].addEventListener('click', function(e){
+                let idName = e.target.id;
+
+                if(idName == 'left'){//왼쪽으로 이동
+                    x=x-20;
+                }else if(idName == 'right'){//오른쪽으로 이동
+                    x=x+20;
+                } else if(idName == 'top'){ // 위쪽으로 이동
+                    y=y-20;
+                } else if(idName == 'bottom') // 아른쪽으로 이동
+                { y=y+20;
+                }
+
+                ball.style.left = x + 'px';
+                ball.style.right = y + 'px';
+
+
+            })
+        });
+        
+    </script>
+    <body>
+        <div class="container">
+            <button id="left">left</button>
+            <button id="right">right</button>
+            <button id="top">top</button>
+            <button id="bottom">bottom</button>
+        </div>
+    </body>
+</body>
+</html>

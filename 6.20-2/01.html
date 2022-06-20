@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        document.addEventListener('load',function(){
+            const btn = document.querySelector('#btn')
+
+            function btn a() {
+            btn.addEventListener('click', abc());
+            }
+            
+            function abc(){
+                btn.style.backgroundColor = "#ccc";
+            }
+
+            let aaa= abc2();
+
+            function abc2(){
+                return btn.style.backgroundColor = '#ccc';
+
+            }
+        
+        });
+
+
+    </script>
+    <div id="btn" onClick="btn_a()">클릭</div>
+    <!--onClick="btn_a()" 인라인-->
+        
+</body>
+</html>

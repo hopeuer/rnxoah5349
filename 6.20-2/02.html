@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+      //tag 이름으로 접근
+    const li01= document/getElle("li");
+    console.log(li);
+    console.log
+      //class 이름으로 접근
+      //id 접근
+      //CSS 기법으로 첫 번째 노드 선택
+      //CSS 기법으로 
+//배열 전체태그를 선택
+
+    
+        <ul id="tutorial">
+            <li class="html">HTML</li>
+            <li class="css">CSS</li>
+            <li class="css3">CSS3</li>'
+            '
+            <li class="javascript">JavaScript</li>
+            <li class="jquery">jQuery</li>
+            <li class="blank">BLAnK</li>
+        </ul>
+        //class 이름으로 접근 -> NodeList object
+        // const html = document.getElementsByClassName('html');
+        // console.log(html);
+        // console.log(html[0]);
+        // html[0].style.backgroundColor = '#666';
+        // html[1].style.backgroundColor = '#ccc';
+        // html[2].style.backgroundColor = '#999';
+
+        //id 접근로 접근 -> Element object
+        // const tutorial = document.getElementById('tutorial');
+        // tutorial.style.style.backgroundColor='#666';
+
+        //CSS 기법으로 첫 번째 노드 선택 -> Node object
+        // const li = document.getSelect('#tutorial > li');
+        // li.style.backgroundColor = '#666'
+
+
+        //CSS 기법으로 전체 노드 선택
+        const li = document.querySelectorAll("#tutorial > li");
+        for(let i=0; i<li.length; i++){
+            // li[i].style.backgroundColor = '#666'
+
+            //특정노드를 선택시 조건문사용
+            //조건문에 해당되는 요소안에 글자를 의미 textContent
+            if(li[i].textContent == 'HTML' || li[i].textContent == 'CSS'){
+                li[i].style.backgroundColor = '#000';
+                li[i].style.color = '#fff'
+            }
+        }
+    </script>
+</body>
+</html>
