@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트01</title>
+    <style>
+        *{margin: 0; padding: 0px;}
+        body{padding: 50px;}
+        .ball{position: absolute;
+              top:120;  left: 40px; 
+              width: 50px; height: 50px;
+              border-radius: 50%;
+              background-color: aqua;  }
+    </style>
+    <script>
+        // document.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('load', function() => {
+            const queue = document.querySelector("#queue");
+            const ball = document.querySelector('.ball');
+            let x = ball.offsetLeft;
+            let targetx = 400;
+            let targetx = 40;
+
+            queue. addEventListener('click'. function() {
+                animate(ball,x,targetx)//함수호출
+            })
+
+            function animate(ball, x, targetx){ //구조분해할당
+                const timer = setInterval(function(){
+                    if(x < targetx){ //40............390(400)
+                         startx = +=10;
+                     }else {//390
+                        startx = targetx; //400
+                        clearInterval(timer)
+                   } 
+                   taget.style.left = startx + 'px';
+                }, 10)
+            });
+        //  document.querySelector('#queue').addEventListener('click', function(){
+        //     queue.addEventListener('click', function(){
+        //        const timer = setInterval(function(){
+        //             //조건
+        //              if(x < targetx){ //40............390(400)
+        //                 x = x + 10;
+        //             }else {//390
+        //                 x = targetx; //400
+        //                 clearInterval(timer)
+        //             } 
+
+        //             ball.style.left = x + 'px';
+        //         }, 10)
+        //     });
+
+        //     queue2.addEventListener('click', function(){
+        //         if(x== 400) {
+        //        const timer2 = setInterval(function(){
+        //             //조건
+        //              if(x > targetx2){ //40............50(40)
+        //                 x = x - 10;
+        //             }else {//50
+        //                 x = targetx2  //40
+        //                 clearInterval(timer2)
+        //             } 
+
+        //             ball.style.left = x + 'px';
+        //         }, 10)
+        //     }    
+        //     });         
+        //  });
+        //  /*
+          
+         */
+
+    </script>
+</head>
+<body>
+   <div class="container">
+        <button id="queue" onclick="targetx">animate queue</button>
+        <button id="queue2" onclick="targetx2">animate queue2</button>
+        <div class="ball"></div>
+   </div>
+    
+</body>
+</html>

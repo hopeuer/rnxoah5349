@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .container{
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 600px;
+            height: 200px;
+            overflow: hidden;
+        }
+        button{margin-left: 50px; padding: 5px 15px; cursor: pointer;}
+        .gallery{width: 600px; height: 200px;
+                list-style: none;
+                position: absolute;
+                left: -600px; top:40px;
+                transition: left 0.5s ease-in-out;    
+                }
+        .gallery li{width: 200px; height: 200px; opacity: 0.4;
+                    transition:  opacity 0.3s;
+                    cursor: pointer;
+                    }
+        .gallery li:nth-child(1){background-color: aqua;}
+        .gallery li:nth-child(2){background-color: blueviolet;}
+        .gallery li:nth-child(3){background-color: red;}
+        .gallery.active{
+            left: 0;
+
+        }
+        .gallery li.over{
+            opacity: 1;
+
+        }                    
+    </style>
+    <script>
+        'use strict'
+        window.addEventListener('load', () => {
+            const tab = document.getElementById('#tab');
+            const slide = document.querySelector('.gallery');
+            const slideList = document.querySelectorAll('.gallery li');
+            let status="closed"; //상태값
+
+            tab.addEventListener('click', function(e){
+                if(status == "closde"){
+                    status = "open";
+                    e.target.innerText = 'gallery closed';
+                    slide.classList.add('active');
+            } else if(status == "open"){
+                    status = "closed";
+                    e.target.innerText = 'gallery open';
+                    slide.classList.remove('active');
+            }
+            });
+
+            //NodeList OBJECT
+
+            for(let i = 0; i  < slideList.length; i++){
+                slideList[i].addEventListener('mouseeter', function(){
+                    e.target.classList.add('over');
+                })
+                slideList[i].addEventListener('mouseleave', function(){
+                    e.target.classList.remove('over');
+                })
+            }
+        
+        });
+
+    </script>
+</head>
+<body>
+   
+        
+        <div class="container">
+            <button id="tab">gallery open</button>
+            <ul class="gallery">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        
+        </div>
+    
+</body>
+</html>
