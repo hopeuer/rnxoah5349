@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>활용하기</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            //객체선언
+
+            const star = document.querySelector('h1')
+            star.style.position = 'absolute'
+
+            //별의 이동
+            let [x, y] = [0, 0] // left, top 초기값
+            const block = 20 //한 번 이벤트 일어날 때 움직이는 거리
+
+            const print = () => { //const print = function(){}
+                star.style.left = `${x * block}px`
+                star.style.top = `${y * block}px`
+            } 
+
+           print() // star의 초기위치 이동하기 위해 함수 선언
+
+           //별을 이동하는 기능
+            const [left, up, right, down] = [37, 38, 39, 40] //keyboard
+
+            document.body.addEventListener('keydown', (event) => {
+                switch(event.keyCode){
+                    case left:
+                    x -= 1
+                    break
+                    case up:
+                    y -=1
+                    break
+                    case right:
+                    x += 1
+                    break
+                    case down:
+                    y +=1
+                    break
+                }
+                print()// 방향설정에 의해서 방향값 설정되어 이동
+            })
+
+        });
+
+    
+    </script>
+</head>
+<body>
+    <h1>★</h1>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위변환프로그램</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           //객체 선언
+           const input = document.querySelector('input')
+           const button = document.querySelector('buttpn')
+           const p = document.querySelector('p')    
+
+           
+            button.addEventListener('click', () => {
+                const inch = Number(input.value) // input안에 있는 값을 숫자값으로 변환(연산)
+
+                if(isNaN(inch)) { //isNall(inch)는 inch 값이 Nall인지 판별하는 메소드 
+                    //NaN는 숫자가 아님을 의미 'not a number'
+                    p.textContent = '숫자를 입력해주세요'
+                    return
+                }
+
+                //변환해서 출력합니다.
+
+                const cm = inch * 2.54
+                p.textContent = `${cm} cm`
+
+            });
+        });
+
+    
+    </script>
+</head>
+<body>
+    <input type="text"> inch<br>
+    <button>계산</button>
+    <p></p>
+</body>
+</html>

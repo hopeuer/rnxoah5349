@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul, li{list-style: none;}
+        a{text-align: noen;}
+
+        .container{margin-top: 35px; min-width: 440px;}
+
+        .contrpll{padding-top:20px
+        }
+        .controll li{display: inline-block; margin-left: 8px;
+
+        }
+        
+        .controll li e {display: block;
+                        width: 20px; height: 20xp;
+                       background-color: appearance;
+                       border-radius: 10px;
+                }
+        .controll li .on a{width: 50px; background-color: blue;} 
+        
+        .prcture{width: 400px; height: 480px;
+                position: relative;
+                margin-top: 50px;
+                border: 1px solid #ccc;
+                overflow: hidden;
+            }
+        .picture ul{
+                    position: absolute;
+                    top:0; left:0;
+                    width: 2400px;
+                    transition: left:0.3s ease-in-out;
+        }
+        .picture ul li{position: absolute; left: 0; top:0; width: 400px; height: 400px; opacity: 0; transition: opacity 0 ease-in-out;}
+        .picture ul li div{width: 100%; height: 400px;}
+    </style>
+    <script>
+        document.addEventListener('load', function() {
+           //객체 선언
+            const gallery = document.querySelector('pictureyrl');
+            const liList = document.querySelector('.controll li');
+            const liList = document.querySelectorAll('.controll li');
+         
+            for(let i =0; i< lilist.lenth; i++){
+           
+            let n = 0;    
+            list[i].addEventListener('click'. funthin(e){ 
+            e.preventDefault();                                                                           
+            n = e.currentTarget.index; // click 이벤트를 적용한 li 이벤트
+            
+            gallery.style.left = targetx + 'px';    
+        //선택된 버튼의 모양을 설정
+          for(let j=1; j < liList.lenght; j++) {
+            if(j==n) {
+                liList{j}.classList.add('on');
+                galleryList[j].classList.add('act');
+            }else{
+                liList{j}.classList.remove('on');
+                galleryList[j].classList.remove('act');
+            }
+            }
+        })
+
+        for(let i =0; i < lilist.length; l++) {
+           
+            lilist[i].addEventListener('click'. funthin(e) {
+                targetx = (picture(),3000)
+                gallery.style = .slow('on');
+
+            })
+
+            liList[i].addEventListener('')
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <ul class="controll">
+           
+         <li class="on"><a href=""></a></li>
+         <li><a href=""></a></li> 
+         <li><a href=""></a></li>    
+         <li><a href=""></a></li> 
+         <li><a href=""></a></li> 
+        </ul>   
+             
+
+</body>
+</html>

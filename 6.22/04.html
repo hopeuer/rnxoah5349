@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           //객체 선언
+           const input = document.querySelector('input')
+           const p = document.querySelector('p')
+           const isEmail = (value) => {//아이디@서버주소 -> 이메일형식이 맞는지 확인하고 리턴함
+
+            return (value.indexOf('@') > 1) && (value.split('@')[1].indexOf('.') > 1)
+           
+            /*
+            조건식 ? 참일 때 실행문: 거짓일때 실행
+            조건식 && 참일 때 실행
+            */
+           }
+
+           input.addEventListener('keyup', (event) => {
+            const value - event.currentTarget.value
+           
+            
+            if(isEmail(value){
+                p.style.color = 'blue'
+                p.textContent = `이메일 형식입니다: ${value}`
+            } else {
+                p.style.color = 'red'
+                p.textContent = `이메일 형식이 아닙니다: ${value}`
+            })
+
+            })
+
+            //추가
+             //event.target => 부모 밑에 있는 자식에 이벤트를 적용
+            //event.currentTarget => 부모에게 이벤트가 적용
+            const onLogin = (e) => {
+                console.log(e.target);
+                console.log(e.currentTarget);
+            }
+
+           })
+
+    
+
+    
+    </script>
+</head>
+<body>
+    <input type="text">
+    <p></p>
+    <br><br><br><br>
+    <button onclick="{onLogin}">
+    <span>button01</span>
+    </button>
+</body>
+</html>
