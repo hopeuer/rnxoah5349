@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭</title>
+    <style>
+        .container{
+            margin-top: 35px;
+            min-height: 440px;
+        }
+        nav ul{
+            margin: 16px 0;
+            padding: 8px 0;
+            text-align: left;
+            font-size: 400;
+            border-bottom: 1px solid #d4d4d4;
+        }
+        nav li{display: inline;}
+        nav a{padding: 10px 20px 10px;
+              font-size: 15px;
+              background-color: #f1f1f1;
+              color: #333;
+              border: 1px solid #d4d4d4;
+              border-bottom: none;  
+        }
+        nav li.on a{
+            background-color: #bac007;
+            color: #ffff;
+            border-color: #bac007;
+        }
+        .box{
+            display: none;
+            margin: 30px 0;
+            padding: 30px 0;
+            font-size: 18px;
+            color: #333;
+            border-bottom: 4px solid #d4d4d4;
+        }
+        .box.act{display: block;}
+</style>
+</head>
+<script>
+    window.addEventListener('load', function(){
+        const menuLi = document.querySelectorAll('.nav li');
+
+        //nodeList -> 한개의 객체
+        const menuLi = document.querySelectorAll('.ul');
+        const menuLi = document.getElementsByClassName('#menu');
+        const menuLi = document.getElementsByTagName('.menu');
+
+        menuLi.style.color = 'blue';
+
+         //nodeList -> 한 개의 객체이지만 선택자 선택하는 방법에서 'ul, li'
+
+         const menuLi = document.querySelector('ul li');
+         menuLi.style.color = 'blue';
+         //ul li은 li 태그가 여러 개 이므로 이중에 
+        for(let i = 0; i<info.length; i++){
+            info[i],style.color= 'blue';
+        }
+
+         //nodeList -> 배열.요소에서 하나를 선택
+         //처음에 객체를 선언할때
+
+         const info = document.querySelectorAll('.box')[0];
+        //2.일반적으로 배열을 객체 선언하고 배열요소 하나를 선택
+        info[0].style.color = 'blue';
+
+        querySelectorAll
+
+        // menuLi[0].classList.add('on')
+        // info[0].classList.add('act')
+        
+    });
+</script>
+<body>
+    <section class="container">
+        <nav>
+            <ul id="menu">
+                <li class="tab1"><a href="">HTML</a></li>
+                <li class="tab2"><a href="">CSS</a></li>
+                <li class="tab3"><a href="">JAVASCRIPT</a></li>
+                <li class="tab4"><a href="">JQUERY</a></li>
+            </ul>
+        </nav>
+        <div class="box html">subject: HTML</div>
+        <div class="box css">subject: CSS</div>
+        <div class="box javascript">subject: JAVASCRIPT</div>
+        <div class="box jquery">subject: JQUERY</div>
+    </section>
+</body>
+</html>

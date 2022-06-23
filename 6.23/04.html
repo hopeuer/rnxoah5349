@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭</title>
+    <style>
+        .container{
+            margin-top: 35px;
+            min-height: 440px;
+        }
+        nav ul{
+            margin: 16px 0;
+            padding: 8px 0;
+            text-align: left;
+            font-size: 400;
+            border-bottom: 1px solid #d4d4d4;
+        }
+        nav li{display: inline;}
+        nav a{padding: 10px 20px 10px;
+              font-size: 15px;
+              background-color: #f1f1f1;
+              color: #333;
+              border: 1px solid #d4d4d4;
+              border-bottom: none;  
+        }
+        nav li.on a{
+            background-color: #bac007;
+            color: #ffff;
+            border-color: #bac007;
+        }
+        .box{
+            display: none;
+            margin: 30px 0;
+            padding: 30px 0;
+            font-size: 18px;
+            color: #333;
+            border-bottom: 4px solid #d4d4d4;
+        }
+        .box.act{display: block;}
+</style>
+</head>
+<script>
+    window.addEventListener('load', function(){
+        let n = 0;
+        const menuLi = document.querySelectorAll('.nav li');
+        const info = document.querySelector('.box');
+
+        menuLi[0].classList.add('on');
+        info[0].classList.add('act');
+
+        for(let i =0; i < menuLi.length; i++){ //인자 -> 배열요소 인덱스값
+            n = 0;
+            menuLi.addEventListener('click', function(e){
+                //$(this).index()
+                n = e.currentTarget.index; //0,1,2,3
+                
+                for(let j =0; j < menuLi.length; j++){//click 적용후 해당요소 다른 비교하기 위해서 반복적으로 li읽기
+                    if(j == n){
+                        menuLi[j].classList.add('on');
+                        info[j].classList.add('act');
+                    } else {
+                        menuLi[j].classList.remove('on');
+                        info[j].classList.remove('act');
+                    }
+                }
+            });
+        }
+        
+        
+    });
+</script>
+<body>
+    <section class="container">
+        <nav>
+            <ul id="menu">
+                <li class="tab1"><a href="">HTML</a></li>
+                <li class="tab2"><a href="">CSS</a></li>
+                <li class="tab3"><a href="">JAVASCRIPT</a></li>
+                <li class="tab4"><a href="">JQUERY</a></li>
+            </ul>
+        </nav>
+        <div class="box html">subject: HTML</div>
+        <div class="box css">subject: CSS</div>
+        <div class="box javascript">subject: JAVASCRIPT</div>
+        <div class="box jquery">subject: JQUERY</div>
+    </section>
+</body>
+</html>

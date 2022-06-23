@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+    <style>
+        span{font-size: 12px; transition: all .5s;}
+        .on{font-size: 50px;}
+    </style>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let [timer, timerId] = [0, 0]
+        const h1 = document.querySelector('h1');
+        const checkbox = document.querySelector('input');
+        const text = document.querySelector('span')
+
+        //change 이벤트 for문에서 많이 사용하는 이벤트
+        checkbox.addEventListener('change', (event) => {
+            if(event.currentTarget.checked) {
+                //체크된 상태
+                timerId = setInterval(() => {
+                 timer +=1
+                 h1.textContent = `${timer}초`   
+            }, 1000)
+                text.innerText = '타이머 활성화'
+                text.style.color = 'blue'
+                text.classList.add('on');
+        } else {
+            //체크해제된 상태
+            clearInterval(timerId)
+            text.innerText = '타이머 비활성화'
+            text.style.color = '#000'
+            text.classList.remove('on');
+        }
+            
+        });
+        //로그인 -> 아이디 비번 -> 로컬지정 ->쿠키(웹브라우저) -> 로그아웃 정보보관하는 시간 정함
+
+    });
+</script>
+<body>
+    <input type="checkbox">
+    <span>타이머 비활성화</span>
+    <h1></h1>
+</body>
+</html>
