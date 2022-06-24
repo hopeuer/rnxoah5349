@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ margin: 0; padding: 0;}
+        ul,li{list-style: none;}
+        a{text-decoration: none;}
+
+        #wrap{width:100%}
+        #wrap > div{ width: 100%; height:100vh}
+        #wrap > div:nth-child(1){/*background-color: burlywood;*/ }
+        #wrap > div:nth-child(2){background:url(../profile.png) no-repeat 0 0;}
+        #wrap > div:nth-child(3){background-color: rgb(135, 222, 208);}
+        #wrap > div:nth-child(4){background-color: rgb(135, 183, 222);}
+        #wrap > div:nth-child(5){background-color:greenyellow;}
+        #wrap > div > div{margin: 0 auto; width: 1500px;  height: 100vh;
+                          /* background-color:rgba(255, 244, 146, 0.5); */
+                          }
+
+        #main .in_main{width: 100%; height: 1000px; background:url(./images/laptop-g76d204bf2_640.jpg) no-repeat 0 0;
+        background-size: cover;}
+        #main .in_main h2{ margin-top: 600px;}
+        #main .header{width: 100%; height: 120px;} 
+        #main .logo{float: left; margin:  20px 0 0 0;  
+                    width: 180px; height: 80px;  color: #716E64;} 
+        #main .nav{ float: right; margin: 50px 0 0 0;}
+        #main .nav li{ float: left; margin-right: 50px;}     
+        #main .nav a{font-size: 20px; font-weight: 600; color:#716E64; 
+                    } 
+        #main .nav li.on a{color:#000;}
+
+        #main h2{ float: left; width: 100%; margin:300px 0 0 0; 
+                  font-size:50px; text-align: right;
+                  padding-right:100px; box-sizing: border-box;}
+        #main p{float:right; margin:20px 100px 0 0; 
+                font-size:16px; color: #D6CBC2;}
+
+        #q_mn{
+            position: absolute; right:20px; top: 300px; z-index: 9999;
+            width:120px; height:200px; border-radius: 6px;
+            border:1px solid #ccc;
+            background-color: #fff; 
+        }
+        #q_mn ul.nav{ margin:0 auto; margin-top:30px; list-style:none; width:50px;}	
+        #q_mn ul.nav li{ margin-bottom:10px}   
+        #q_mn ul.nav li a{ color: #ccc;}
+        #q_mn ul.nav li.on a{ color: rgb(15, 15, 15);}
+
+        #profile .in_profile .in_profile1{float: right; margin-right: 270px; margin-top: 300px;}
+        #profile .in_profile .in_profile1 h3{position: absolute; font-size: 60px; margin-left: -600px; margin-top: -200px;}
+        #profile .in_profile .in_profile1 h2{font-size: 40px;}
+        #profile .in_profile .in_profile1 p{font-size: 20px;}
+        #profile .in_profile img{position: absolute; width: 600px; height: 600px; margin-left: 100px; margin-top: 250px;}
+
+        #skill{}
+        #skill .in_skill{ display: flex; justify-content: center; align-items: center;}
+        #skill .skill_list{}
+        #skill .skill_list > li{float: left; margin-right: 100px; text-align: center;}
+        #skill .skill_list > li > div{ width: 50px; height:300px; border:1px solid #000;
+                                       position: relative; overflow: hidden;}
+        #skill .skill_list > li > div > .in_box{width: 50px; height:300px; background-color: #716E64;
+                                              position: absolute; top:300px; left: 0; }
+        #project_1{}                                             
+        #project_1 .in_project_1{display: flex; justify-content: center; align-items: center;}
+        #project_1 .list{ width: 1000px; }
+        #project_1 .list img{float: left; position: absolute; width: 350px; height: 350px; margin-left: -425px; margin-top: 130px;}
+        #project_1 .list > li{float: left;  width: 500px; height: 800px;
+                             border: 1px solid #000; box-sizing: border-box;
+                             } 
+        #project_1 .output{ background:url(../screen.png) no-repeat 0 100px; 
+                            background-size: 100%;}
+        #project_1 .output img{position: relative; width: 400px; height:600px; margin-left: 50px; margin-top: -10px;}                    
+        #project_1 .output > div{width: 420px; height: 270px; 
+                                 border: 1px solid #000; box-sizing: border-box;
+                                 margin: 120px 0 0 39px;}       
+        #project_1 .account img{width: 400px; height:600px; margin-left: 50px; margin-top: -10px;}    
+
+        #end .in_end h3{float: left; font-size: 50px; margin-left: 700px; margin-bottom: -100px; margin-top: 170px;}
+        #end .in_end p{font-size: 20px; margin-top: 400px; margin-left: 200px;}
+        #end .in_end .in_end2{margin-top: -150px;}
+        #end .in_end .in_end2 img{width: 50px; height: 50px; margin-left: 800px; margin-bottom: 35px;}
+        #end .in_end .in_end3{margin-top: -350px;}
+        #end .in_end .in_end3 li{margin-bottom: 73px;}
+        #end .in_end .in_end3 a{width: 50px; height: 50px; margin-left: 900px;}
+        #footer_inner{width: 100%; height: 100px; background-color: #000;}
+        #footer_inner .footer_one h3{font-size: 30px; color: white; margin-left: 200px; margin-bottom: -40px;}
+        #footer_inner .footer_one img{float: right; width: 40px; height: 40px; margin-right: 50px;}
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function(){
+            var menu = $('.nav > li');
+            var contents = $('#wrap > div');  
+
+            $('.nav> li').click(function(event){
+                event.preventDefault();
+                
+                var tg = $(this);
+                var i = tg.index();
+                
+                var section = $('#wrap > div').eq(i);
+                var tt = section.offset().top;
+                
+                $('html, body').stop().animate({scrollTop:tt});
+            });
+            //메뉴에 addclass를 적용
+            // $(window).scroll(function(){
+            //     var sct = $(window).scrollTop();
+                
+            //     $('#wrap > div').each(function(){
+            //         var tg = $(this);
+            //         var i = tg.index();
+            //         if(tg.offset().top <= sct){
+            //             $('.nav > li').removeClass('on');
+            //             $('.nav > li').eq(i).addClass('on');
+            //     }
+            // });
+            // $(window).scroll(function(){
+            // var sct = $(window).scrollTop();
+            
+            // contents.each(function(){
+            //     var tg = $(this);
+            //     var i = tg.index();
+            //     if(tg.offset().top <= sct){
+            //         menu.removeClass('on');
+            //         menu.eq(i).addClass('on');
+            //     }
+            // });
+
+
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- 메인 -->
+        <div id="main">
+            <div class="in_main">
+              <div class="header">
+                 <h1 class="logo">KSJ</h1>
+                 <ul class="nav">
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">Profile</a></li>
+                     <li><a href="#">Skill</a></li>
+                     <li><a href="#">project1</a></li>
+                     <li><a href="#">contact</a></li>
+                  </ul>
+                  
+              </div> 
+                    <h2>
+                        Hello, I'm Koo Tae Mo
+                    </h2>
+                    <p>UX Designer & Front End Developer</p>   
+            </div>
+        </div>
+        <!-- 소개 -->
+        <div id="profile">
+            <div class="in_profile">
+                <div class="in_profile1">
+                    <h3>Profile</h3>
+                    <h2>profile</h2><br>
+                    <p>- 구태모/경남 창원 거주</p>
+                    <p>- 1994.03.06</p>
+                    <p>- 010-7760-5349</p>
+                    <p>- rnxoah3659@naver.com</p>
+                    <br><br><br><br><br><br><br>
+                    <h2>History</h2><br>
+                    <p>- 코리아IT아카데미 프론트 엔드 국비 과정 수료</p>
+                </div>
+                <img src="./images/face-805559_1280.jpg" alt="">
+            </div>
+        </div>
+        <!-- 스킬 -->
+        <div id="skill">  
+            <div class="in_skill">
+                
+               <ul class="skill_list">
+                   <li>
+                       <div>
+                           <div class="in_box in_box01">80%</div>
+                       </div>
+                       <h5>html</h5>
+                   </li>
+                   <li>
+                        <div>
+                            <div class="in_box in_box02">50%</div>
+                        </div>
+                        <h5>css</h5>
+                   </li>
+                   <li>
+                        <div>
+                            <div class="in_box in_box03">100%</div>
+                        </div>
+                        <h5>jquery</h5>
+                   </li>
+                   <li>
+                        <div>
+                            <div class="in_box in_box04">90%</div>
+                        </div>
+                        <h5>node.js</h5>
+                  </li>
+
+               </ul>
+
+            </div>
+            <script>
+             $(document).ready(function(){
+                var scene01Num = 1;
+
+                $(window).scroll(function(){
+                    var scrollTop = $(document).scrollTop();
+                    if(scrollTop > 1800 && scene01Num == 1) {
+                        scene01Num = 0;
+                        $('#skill .in_box01').stop().delay(0).css({top:'300px'}).animate({top:'30px'},1000);
+                        $('#skill .in_box02').stop().delay(500).css({top:'300px'}).animate({top:'100px'},1000);
+                        $('#skill .in_box03').stop().delay(1000).css({top:'300px'}).animate({top:'0px'},1000);
+                        $('#skill .in_box04').stop().delay(1500).css({top:'300px'}).animate({top:'10px'},1000);
+                    }
+                    else if(scrollTop < 1500 && scene01Num == 0){
+                        scene01Num = 1;
+                        $('#skill .in_box01').stop().css({top:'30px'}).animate({top:'300px'},1000);
+                        $('#skill .in_box02').stop().css({top:'100px'}).animate({top:'300px'},1000); 
+                        $('#skill .in_box03').stop().css({top:'0px'}).animate({top:'300px'},1000);
+                        $('#skill .in_box04').stop().css({top:'10px'}).animate({top:'300px'},1000);
+
+                    }
+                });
+             });
+
+            </script>
+        </div>
+        <!-- 프로젝트1 -->
+        <div id="project_1">
+            <div class="in_project_1">
+               <ul class="list">
+                   <li class="output">
+                    <h3>프로젝트명</h3><br>
+                    <p>도서관 사이트 활성화</p><br><br>
+                    <img src="./images/monitor-812868_1280.png" alt="">
+                   </li>
+                
+                <img src="./images/potopolioimg1.png" alt="">
+                   <li class="account">
+                       <h3>프로젝트명</h3><br>
+                       <p>개인 포트폴리오</p><br><br>
+                       <img src="./images/monitor-812868_1280.png" alt="">
+                   </li>
+                   <img src="./images/potopolioimg2.png" alt="">
+               </ul>
+         
+            </div>
+        </div>
+        <!-- 마무리 -->
+        <div id="end">
+            <div class="in_end">
+                <h3>contact</h3><br><br><br>
+                <p>안녕하세요. 저는 코딩을 배운 지 얼마 되지 않았지만<br>그에 대한 노력과 열정은 보시기에는 부족하겠지만<br> 충분하다고 생각합니다<br>
+                    동료분들과의 협업과 협동에서도<br> 최선을 다해 노력해서 보탬이 될 수 있도록 할 것이며...<br></p>
+                    <div class="in_end2">
+                        <ul>
+                            <li><a href="#"><img src="./images/end_img1.png"></img></a></li>
+                            <li><a href="#"><img src="./images/end_img2.png"></img></a></li>
+                            <li><a href="#"><img src="./images/end_img3.png"></img></a></li>
+                            <li><a href="#"><img src="./images/end_img4.png"></img></a></li>
+                        </ul>    
+                    </div>
+                    <div class="in_end3">
+                        <ul>
+                            <li><a href="#">rnxoah3659@naver.com</a></li>
+                            <li><a href="#">010 - 7760 - 5349</a></li>
+                            <li><a href="#">오픈 카카오톡 아이디 미정</a></li>
+                            <li><a href="#">이력서 다운로드</a></li>
+                        </ul>    
+                    </div>
+            </div>
+        </div>
+    </div>
+     <!-- 퀵메뉴 -->
+     <div id="q_mn">
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Skill</a></li>
+            <li><a href="#">project1</a></li>
+            <li><a href="#">finish</a></li>
+        </ul>
+    </div>
+    <!-- 최하단 메뉴 -->
+    <footer>
+        <div id="footer_inner">
+            <div class="footer_one">
+                <h3>2022 All right Reversed 구태모</h3>
+                <a href="#"><img src="./images/foot img.png" alt=""></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        $(function(){
+            $(window).scroll(
+            function(){
+            var	windowTop =$(window).scrollTop()+300;
+            $("#q_mn").stop().animate({top:windowTop+"px" },500);
+            //$("#q_mn").stop().animate({속성:"속성값", 속성:"속성값" },1000);	
+                }
+            );
+        });
+    </script>    
+</body>
+</html>
