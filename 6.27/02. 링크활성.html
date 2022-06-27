@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링크활성화</title>
+    <script>
+        document.addEventListener('DOMContemtLoaded', () => {
+            //상태값 초기화
+            let status = false;
+            
+            //초기값을 변화주기 위한 함수
+            const checkbox = document.querySelector('input');
+            checkbox.addEventListener('change', function(event) {
+                status = event.currentTarget.checked
+                //체크시 true, 체크되지않음
+            });
+
+            //초기값에 의한 링크를 실행할 함수
+            const link = document.querySelector('a');
+            link.addEventListener('click', (event) => {
+                if(!status){//체크시 true, 체크되지 않음 false를 의미
+                    event.preventDefault() // href 실행되서는 않되느냐
+                }
+
+        });
+-
+        });
+    </script>
+</head>
+<body>
+    
+    <input type="checkbox">
+    <span>링크 활성화</span>
+    <br>
+    <a href="http://naver.com">네이버</a>
+</body>
+</html>

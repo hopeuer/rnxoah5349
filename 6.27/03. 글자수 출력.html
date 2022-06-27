@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자수 출력</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const textarea = document.querySelector('textarea');
+            const h1 = document.querySelector('h1');
+            let timerId//setInterval() 중지하기 위해 대상을 객체로 선언
+
+            textarea.addEventListener('focus', (e) => {
+              timerId = setInterval(() =>{//e.currentTatget에 커서가 발생하면 setInterval 시작
+                   const length = textarea.value.length;
+                    h1.textContent = `글자 수 :${length}`
+                }, 50)
+            })
+                textarea.addEventListener('blur', (e) => {
+                    clearInterval(timerId);
+                
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <textarea></textarea>
+</body>
+</html>

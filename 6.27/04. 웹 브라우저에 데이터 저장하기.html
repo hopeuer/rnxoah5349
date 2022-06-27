@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 브라우저에 데이터 저장하기</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           const p = document.querySelector('p');
+           const input = document.querySelector('input');
+           const button = document.querySelector('button');
+
+           const saveValue = localStorage.getItem('input');
+            if(saveValue){
+                input.value = saveValue
+                p.textContent = `이전 실행 때의 마지막 값: ${saveValue}`
+            }
+
+            input.addEventListener('keyup', (e) => {
+                const value = e.currentTarget.value
+                localStorage.setItem('inptu', value); //값을 저장                   
+            })
+
+            button.addEventListener('chick',                                                                                            )
+
+        });
+    </script>
+</head>
+<body>
+    <p></p>
+    <button>지우기</button>
+    <input type="text">
+</body>
+</html>

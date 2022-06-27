@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 브라우저에 데이터 저장하기</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul,li{list-style: none;}
+        a{text-decoration: none;}
+
+        .container{}
+        .container > ul{}
+        .container > ul > li{float: none;
+                                width: 150px; /*height: 40px;*/
+                                text-align: center;
+                                text-transform: uppercase;
+                                font-size: 15px;  
+                                border-bottom: 1px solid #ccc;
+                                box-sizing: border-box;
+                                position: relative;
+                            }
+        .container ul> li:last-child{border-right: 0;}
+        .container ul > li > a{display: block;
+                                width: 100%;
+                                line-height: 40px;
+                                background-color: #eaeaea;
+                                color: #636;
+                                transition: background 0.4s a;
+        }
+        .container .sub{display: block; /*position: absolute; top:40px; left: 0;*/
+                        width: 100%; 
+                        }
+        .container .sub li:last-child{ border-bottom: 1px solid #ccc;}
+        .container .sub a{ display: block; padding: 10px; color:#666;
+                            background-color: #666; transition: backgroun: 0.4s, color:0.4;
+                            }
+        .container .sub a:hover > a,
+        .container .sub a:hover > a.over{
+            font-weight: 600;
+            background: #8ac007;
+            color:#fff;
+        }
+        .container .sub a:focus{background-color: #f8f8f8;} 
+</style>
+    <script>
+        window.addEventListener loaded('load', () => {
+         const menUl = document.querySelectorAll('container > ul > li')
+         const menuLi = document.querySelectorAll('container > ul > li')
+         const sub = document.querySelectorAll('container > ul > li > .sub');
+
+
+         for(let i =0; i <menuLi.length; i++){
+            menuLi[i].addEventListener('click', (e) => {
+                e.preventDefault();
+                //submn은 모든 서브들중에 화면에 보이는 서브 숨김으로 
+                for(let j =0; j < submn.length; j++) {
+                    if(submn[j].style.display == 'block'){
+                        submn[j].style.display == 'none'
+                    }
+                }
+                const.link = e.currentTarget.children[0];
+                      link.classList.add('over')
+                const sub = e.currentTarget.children[1];
+                      sub.style.display = 'block';      
+
+            //         })
+            //     menuLi[i].addEventListener('mouseleave', (e) => {
+            //     e.cuttentTarget.children
+            //     const.link = e.currentTarget.children[0];
+            //           link.classList.remove('over')              
+            //     const sub = e.currentTarget.children[1];
+            //           sub.style.display = 'none';  
+            // })
+            })
+
+         }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li><a href="">main1</a>
+            <ul class="sub">
+                <li>sub1</li>
+                <li>sub2</li>
+                <li>sub3</li>
+                <li>sub4</li>
+            </ul>
+            </li>
+            <li><a href="">main2</a>
+            <ul class="sub">
+                <li>sub1</li>
+                <li>sub2</li>
+                <li>sub3</li>
+                <li>sub4</li>
+            </ul>
+            </li>
+            <li><a href="">main3</a>
+                <ul class="sub">
+                    <li>sub1</li>
+                    <li>sub2</li>
+                    <li>sub3</li>
+                    <li>sub4</li>
+                </ul>
+            </li>
+            <li><a href="">main4</a>
+                <ul class="sub">
+                    <li>sub1</li>
+                    <li>sub2</li>
+                    <li>sub3</li>
+                    <li>sub4</li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</body>
+</html>
