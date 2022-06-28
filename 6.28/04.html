@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test(){
+         try{
+            const array = new Array(9999999999999999)
+           
+          }catch(exception){//exception 예외객체
+            console.log(exception);
+            console.log();
+            console.log(`예외 이름: ${exception.name}`);
+            console.log(`예외 메시지: ${exception.message}`);
+
+            //RangeError 객체는 어떤값이 집합에 없거나 허용되는 범위가 아닐 때 나타나는 오류
+          }
+          
+        }  
+
+        test();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

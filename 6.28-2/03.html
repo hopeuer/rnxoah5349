@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const students = [];//배열객체선언
+
+        //생성자 추가
+        students.push({이름: '구름', 국어: 87, 영어: 98, 수학: 88, 과학:90});
+        students.push({이름: '별이', 국어: 78, 영어: 98, 수학: 88, 과학:90});
+        students.push({이름: '겨울', 국어: 88, 영어: 98, 수학: 88, 과학:90});
+        students.push({이름: '바다', 국어: 98, 영어: 98, 수학: 88, 과학:90});
+
+        //객체를 처리하는 함수
+        function getSumOf(student){//student 배열요소 및 배열인덱스를 의미
+            student.국어 +  student.영어 + student.수학 + student.과학
+        }
+
+        function getAverageOf(student){//student 배열요소 및 배열인덱스를 의미
+            return getSumOf(student) / 4
+        }
+
+        //students.map((student)=> {실행문})
+
+        //출력하기
+        let output = '이름/t총점/t평균/n'
+        for(const s of students){
+        const sum = s.국어 + s.영어 + s.수학 + s.과학
+        const average = sum / 4
+        output += `${s.이름}\t${getSumOf(s)}점\t${getAverageOf(s)}점\n`
+        }
+        console.log(output);
+
+
+        /*[이스케이프 시퀸스 c언어 사용]*/
+
+        //alert(JSON.stringify(students, null,2))
+        // console.log(JSON.stringify(student. null,2)); 
+        //JSON는 데이터를 주고받는 파일형식
+        //JSON.stringify(배열명) 배열요소를 JSON의 문자열 파열로 변환하는 메소드
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
