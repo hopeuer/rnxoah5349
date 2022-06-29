@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding: 0;}
+        ul,li{list-style: none;}
+        a{text-decoration:none;}
+
+        .container{width: 100%; height: 120px;
+                    background-color: #ccc;}
+        .container > ul{}
+        .container > ul > li{ float: left; 
+                              width:150px; height: 40px;
+                              text-align:center;
+                              text-transform: uppercase;
+                              font-size: 15px;
+                              border-right: 1px solid #ccc;
+                              box-sizing: border-box;
+                              position: relative;}
+        .container > ul > li:last-child{border-right:0}
+        .container > ul > li > a{float: left;
+                            display: block;
+                            width: 100%;
+                            line-height:40px;
+                            background-color: #eaeaea;
+                            color: #666;
+                            transition:background 0.4s, color 0.4s;
+        }
+        .container > ul > li:hover > a,
+        .container > ul > li:hover > a.over{
+                         font-weight: 600;
+                         background: #8ac007;
+                         color: #fff;
+        }
+
+        .container .sub{
+                        /* display:none; */
+                        width: 100%;
+                        height: 0px;
+                        opacity: 0;
+                        overflow: hidden;
+                        transition: all 0.5s;
+                      
+        }
+        .container > ul li > ul.act{opacity: 1; 
+                                    height: 160px;
+                                }/*애니메이션 적용하기 위한 스타일 */
+        .container .sub li{ border-bottom: 1px solid #ccc;}
+        .container .sub a{
+            display: block;
+            padding: 10px;
+            color: #666;
+            background-color:#fff;
+        }
+        .container .sub a:hover > a,
+        .container .sub a:over{
+            background-color: #f8f8f8;
+        }
+
+       #subbox{width: 100%; height: 350px;
+                            background-color: yellow;
+                            position: absolute;
+                            top: 90px; z-index: 10;
+                            transition: ;
+                        }
+        #subbox.act{height: 350px;}                    
+    </style>
+    <script>
+       window.addEventListener('load',()=>{
+       
+       //문서에서 추출
+       const menuLi = document.querySelector('.container > ul');//리스트오브젝트
+       const menuLi = document.querySelectorAll('.container > ul > li')
+       const subBox = document.querySelector('container .subbox');
+        
+       menuLi.addEventListener('mouseenter', (e) => {
+        subBox.classList.add('act');
+       });
+       subBox.addEventListener('mouseleave' (e) => {
+        e.target.classList.relative('act');
+       })
+
+        // 오브젝트 추출 menuLi.addEventListener('이벤트', '함수()')
+
+        //리스트오브젝트 -> 배열
+
+        for(let i =0; i<menuLi.length; i++){//i는 menuLi의 인덱스
+            manuLi[i].addEventListener('mouseenter', (e) => {
+                //자식요소 배열로 추출 방법 children{인덱스값}; 
+                const link = e.currentTarget.children[0];
+                if(menuSub.style.display == 'block'){
+                    menuSub.style.display = 'none';
+                }
+
+                //자식요소 배열로 추출 방법 children[인덱스값]
+              const link = e.currentTarget.children[0];
+              const sub =  e.currentTarget.children[1];
+              //대상 style 속성  = '속성값'
+              //대상.classList.add(). 대상.classList.remove()
+              link.classList.add('on');
+            //   sub.style.display = 'block';
+            sub.classList.add('act');
+            console.log(sub)
+            })
+            manuLi[i].addEventListener('mouseleave', (e) => {
+                //자식요소 배열로 추출 방법 children[인덱스값]
+              const link = e.currentTarget.children[0];
+              const sub =  e.currentTarget.children[1];   
+              //대상 style 속성  = '속성값'
+              //대상.classList.add(). 대상.classList.remove()
+              link.classList.remove('on');
+            //   sub.style.display = 'none';
+       })
+       //전체 메뉴에서 벗어나면 원래 상태로 돌아가기
+       const container = document.querySelector('.container');
+       container.addEventListener('mouseleave', (e) =>{
+        for(let i =0; i<menuLi.length; i++){
+            if(menuSub[j].style.display == 'block'){
+                menuSub[j].style.display = 'none';
+            }
+       })
+       }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <li><a href="">main1</a></li>
+            <li><a href="">main2</a></li>
+            <li><a href="">main3</a></li>
+            <li><a href="">main4</a></li>
+        </ul>
+        <div class="subbox">subbox</div>
+    </div>
+    
+    
+</body>
+</html>

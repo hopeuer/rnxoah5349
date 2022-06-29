@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //클래스 생성
+        class Rectangle{
+            //클래스의 틀을 설정
+            constructor (width, height){
+                this.width = width;
+                this.height = height;
+            }
+
+            //사각형 둘레 구하는 함수
+            getPerimeter() {
+              return  2*(this.whidth = this.height)
+            }
+            //사각형 넓이 구하는 함수
+            getArea () {
+            return this.width *this.height
+            }
+        }
+
+        //클래스 추가
+        class Square{
+            constructor(length){
+                this.length = length;
+            }
+
+            //정사각형 둘레 구하는 함수
+            getPerimeter() {
+              return  4* this.length
+            }
+
+            //정사각형 넓이 구하는 함수
+            getArea () {}
+               return this.length * this.length
+        }
+
+
+
+
+
+
+
+
+        //생성자
+        const Square = new Square(10);
+
+        //출력
+        console.log(`사각형 둘레: ${Square.getPerimeter()}`);
+        console.log(`사각형 넓이: ${Square. getArea()}`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
