@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼스타일</title>
+    <style>
+       *{margin: 0; padding: 0;}
+       ul, li{list-style: none;}
+
+       .container{margin-top: 40px;}
+       .check input{
+                    margin-left: 20px;
+                    margin-top: 40px;
+                    vertical-align: middle;
+                    background: url(./image/spr_form.png) no-repeat 0 0;
+       }
+       
+       .check_box1.checked{
+                            background-position: -36px 0;
+                            }
+        .check_box2{display: inline-block;
+                    width: 10px; height: 10px;
+                    vertical-align: middle;
+                    background: url(./image/spr_form.png) no-repeat 0 0;
+                    }                    
+        .check_box2.checked{
+                            background-position: -36px 0;
+                            }  
+        .check_box3{display: inline-block;
+                    width: 24px; height: 24px;
+                    vertical-align: middle;
+                    background: url(./image/spr_form.png) no-repeat 0 -30px;
+                    }                    
+        .check_box3.checked{
+                            background-position: -36px -30px;
+                            }          
+        .check_box4{display: inline-block;
+                    margin-top: 50px;
+                    width: 56px; height: 33px;
+                    vertical-align: middle;
+                    background: url(./image/spr_form.png) no-repeat 0 -30px;
+                    }                    
+        .check_box4.checked{
+                            background-position: -36px -30px;
+                            }        
+        .select dl dt a{
+            display: block;
+            position: relative;
+            padding-left: 10px;
+            width: 180px;
+            height: 27px;
+            font-size: 15px;
+            color: #666;
+            border: 1px solid #dedede;
+            text-decoration: none;
+            vertical-align: middle;
+        }         
+        .select dl dt a span{
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin-top: -3px;
+            width: 10px;
+            height: 6px;
+            background: url(./image/spr_btns.png) no-repeat -127px -73px;
+
+        }
+        .select dl dt a.act span{
+            background-position: -127px -93px;
+
+        }
+
+        .select dl dd{
+            display: none;
+            position: absolute;
+            left: ;
+            top: 20px;
+            z-index: 10;
+            width: 180px;
+            overflow: hidden;
+            background-color: #fff;
+            border: 1px solid #dedede;
+        }
+        .select dl dd li{border-top: 1px solid;}
+        
+    </style>                
+    </style>
+    <script>
+       window.addEventListener('load', () => {
+        //객체 추출
+
+        const container = document.getElementsByClassName('container')[0];
+
+        // for(let i = 0; i < checkArea.length; i++){
+        //     if(container.children[i].tagName == 'FORM'){
+        //         const formArea = container.children[i];
+        //     }
+        // }
+
+        const formArea = container.children[0];
+        console.log(formArea);
+
+        for(i =0; i < formArea.children.length; i++){
+            if(formArea.children[i].className == 'check'){
+                const checkbox = formArea.children[0];
+                //console.log(checkbox)
+                checkbox.addEventListener('click', (e) => {
+                    //console.log('click')
+                    e.preventDefault();
+                    if(e.target.classList.contains('checkde')== 'false'){
+                        //e.target.classList.contains(checkbox) 
+                        //contains는 해당요소 클래스 checked 있느냐
+                        e.target.classList.add('checked');
+                        e.target.nextElementSibling.setAttribute('checked', 'true');
+                    }else{
+                        e.target.classList.remove('checked');
+                        e.target.nextElementSibling.removeAttribute('checked', 'true');
+                    }
+                })
+            }else if(formArea.children[i].className = 'select'){
+                //셀렉트 문서에서 격체로 추출
+                const selectArea = formArea.children[i];
+                const selectDl = selectArea.children[0];
+                const select = selectArea.children[1];
+
+
+                for(let j =0; j = select.children.length; j++){
+                    if(selectDl.children[j].tagName == 'DT'){
+                        const selectDl = selectDl.children[j];
+
+                    }else if(selectDl.children){
+                        const selectArea = formArea.children[i];
+                        const selectDl = selectArea.children[0];
+                        const select = selectArea.children[1];
+                    }
+                }
+
+                //select_option 높이값
+                let selectH= 100;
+                //select_option 숨김을 초기값 설정
+                selectDd.style.display = 'none'
+
+                selectDt. addEventListener('click', function(e){
+                    e.preventDefault();
+                    const link = e.currentTarget.children[0];
+
+                    if(link.classList.contains('active') == false){
+                        link.classList.add('active');
+                        selectDd.style.display == 'block'
+                    }else{
+                        link.classList.remove('active');
+                        selectDd.style.remove == 'block'
+                    }
+                })
+            }    
+        }
+
+        check_box.addEventListener('click', (e) => {
+            e.preventDefault();        
+            if(e.target.classList.contains('checked') == false{
+                e.target.classList.add('checked')
+                e.target.nextElementSibling.setAttribute('checked', 'true')
+            }else{
+                e.target.classList.add('checked')
+                // e.target.nextElementSibling.setAttribute('checked', 'false')
+                e.target.nextElementSibling.removeAttr('checked');
+            }
+            
+            )                                                                                                                                                                                                                                                                                          
+        })
+
+       })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="">
+            <div>
+                <a href="" class="check_box1" title="check box1"></a>
+                <input type="checkbox" id="check1">
+            </div>
+            <div>
+                <a href="" class="check_box2" title="check box2"></a>
+                <input type="checkbox" id="check1">
+            </div>
+            <div>
+                <a href="" class="check_box3" title="check box3"></a>
+                <input type="checkbox" id="check1">
+            </div>
+            <div>
+                <a href="" class="check_box4" title="check box4"></a>
+                <input type="checkbox" id="check1">
+            </div>
+        </form>
+    </div>
+
+
+    <div 
+</body>
+</html>

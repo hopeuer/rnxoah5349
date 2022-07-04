@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀵메뉴</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #wrap{margin: 0 auto;
+                width: 1000px; height: 2000px;
+                background-color: orange;
+            }
+
+        #menu{width: 60px; height: 150px;
+                border: 1px solid #000;
+                position: absolute; right: 10px; top:0;
+            }
+            
+            
+    </style>
+    <script>
+        //객체 선언
+
+        let menuLeft = 50; // 오른쪽 여백
+        let menuGap = 0; // 위쪽여백
+        let menuGap2 = 150; // 스크롤시 브라우저에 위쪽 여백값
+        let menuBase = 150; // 스크롤 시작위치
+        let menuActSpeed = 35; //스크롤 인식하는 딜레이값(클수록 느리게 인식)
+        let menuScrSpeed = 20; //스크롤 속도
+
+        //스크롤 발생시 호출될 함수
+        function staticMenu(){
+            let startpoint, endPoint;
+            startpoint = document.getElementById('menu').style.top 
+            endPoint = Math.max(document.getElement.scrollTop, document.body.scrollTop) + menuGap2// 끝나는 위치값
+
+            if(startpoint !== endPoint){
+                stmanScrollAmount = Math.ceil(Math.abs(stmnEndPoint - stmnStartPoint) / 15);
+                document.getElementById('menu').style.top = parseInt(document.getElementById('menu').style.top) +
+                ((endPoint < startpoint) ? - stmanScrollAmount : stmanScrollAmount) + 'px';
+
+                menuActSpeed
+            }
+        }
+
+        function Initialize(){//menu의 위치를 설정해주는 함수
+            document.getElementById('menu').style.right = menuLeft + 'px';
+            document.getElementById('menu').style.top = document.body.scrollTop + menuBase + 'px';
+            staticMenu()
+        }
+
+    </script>
+</head>
+<body onload="Initialize();">
+    <div id="wrap">
+        <div id="menu"></div>
+    </div>
+</body>
+</html>
