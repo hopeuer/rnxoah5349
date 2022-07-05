@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        button{padding: 5px 15px;
+                background-color: #000;
+                border: none;
+                cursor: pointer;
+                transition: all 0.5s;
+        }
+        button:hover{background-color: #ccc;}
+        .gallery{margin-top: 50px;
+                border: 1px solid #000;
+        }
+        .gallery img{width: 200px; }
+    </style>
+    <script>
+        window.addEventListener('load', () => {
+            //버튼 통해서 이미지 순환되는 갤러리 구현
+            var n = 0; // 이미지의 인덱스
+            var prependbtn = document.getElementById('prepend');
+            var appendbtn = document.getElementById('append');
+            var gallery = document.getElementsByClassName('gallery')[0]; 
+
+
+            //이벤트를 적용
+             prependbtn.addEventListener('click', function(){
+            //    // 노드의 속성 읽기
+            //    var lastChild = gallery.lastElementChild
+            // //    console.log(lastChild)
+
+            //     var src = lastChild.getAttribute('src');
+            //     var alt = lastChild.getAttribute('alt');
+
+                // 노드 삭제
+            //     gallery.removeChild(lastChild)
+            //     //새로운 노드 생성
+            //     var newNode = document.createElement('img');
+            //     newNode.setAttribute('src', src);
+            //     newNode.setAttribute('alt', alt);
+
+            //     //새로운 노드 추가
+            //    var firstChild = gallery.firstElementChild;
+            // //    console.log(firstChild)
+            //     gallery.insertBefore(newNode, firstChild);
+            
+            
+            //요약된 코드
+            var lastChild = gallery.lastElementChild; //newNode
+            var firstChild = gallery.firstElementChild; // 추가될 요소위치가 요소
+            var newNode = lastChild.cloneNode(true); //복제
+            gallery.removeChild(lastChild); //삭제
+            gallery.insertBefore(newNode, firstChild); //추가
+
+            });
+     
+
+        appendbtn.addEventListener('click', function(){
+               // 노드의 속성 읽기
+            //    var firstChild = gallery.firstElementChild
+            // //    console.log(lastChild)
+
+            //     var src = firstChild.getAttribute('src');
+            //     var alt = firstChild.getAttribute('alt');
+
+            //     // 노드 삭제
+            //     gallery.removeChild(firstChild)
+            //     //새로운 노드 생성
+            //     var newNode = document.createElement('img');
+            //     newNode.setAttribute('src', src);
+            //     newNode.setAttribute('alt', alt);
+
+            //     //새로운 노드 추가
+            //     gallery.appendChild(newNode);
+                
+            //요약된 코드
+            var firstChild = gallery.firstElementChild; //newNode
+            var newNode = lastChild.cloneNode(true); //복제
+            gallery.removeChild(firstChild); //삭제
+            gallery.appendChild(newNode); //추가
+            });
+        
+    </script>
+</head>
+<body>
+    <div class="container">
+        <button id="prepend" title="prepend">prepend</button>
+        <button id="append" title="append">append</button>
+        <div class="gallery">
+            <img src="./image/zoo1.jpg" alt="zoo1">
+            <img src="./image/zoo2.jpg" alt="zoo2">
+            <img src="./image/zoo3.jpg" alt="zoo3">
+        </div>
+    </div>
+</body>
+</html>
