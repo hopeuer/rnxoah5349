@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{margin: 0; padding: 0;}
+    .container{margin-top: 50px;  width: 900px; height: 506px;
+                position: relative;
+    }
+    .control{display: block;
+                position: absolute;
+                top:50%;
+                left: 50%;
+                z-index: 9999;
+                margin: -50px 0 0 -50px;
+                width: 100px; height: 100px;
+                text-indent: -9999px;
+                overflow: hidden;
+                background: url(./image/ima.png) no-repeat 0 0;
+                background-size: cover;
+                opacity: 0.8;
+                border-radius: 50px;
+            }      
+    #my_video{display: block;
+                margin-top: 20px;
+                width: 900px;
+                height: auto;
+            }
+</style>
+<script>
+    window.addEventListener('load', () => {
+       
+        const video = document.getElementById('my_video');
+        const videoList = ["video/seoul.mp4", "video/forest.mp4", "video/surset/mp4"]
+        const bttonList = [];
+        let Flag
+
+        //button을 buttonList 배열에 저장
+        for(let item of container.children){
+            if(item.tagName == 'BUTTON'){
+                buttonList.push(item);
+            }
+        }
+        // console.log(buttonList);
+
+        //각각 버튼에 클릭이벤트를 적용
+        buttonList[i].addEventListener('click', (e) => {
+            buttonList[i].index = i;
+            buttonList[i].addEventListener('click', (e) => {
+                const index = e.target.index;
+                //버튼 인덱스값에 해당되는 비디오를 실행하는 함수 호출
+
+                playVideo(index. videoList[index]);
+            })
+        })
+
+        function playVideo(n,src) {
+            // console.log(n + ":" + src)
+        
+            if(flag !== n){//인덱스값이 저장된 flag와 버튼인덱스(n) 불일치되어야 실행
+                flag = n;
+                video.setAttribute('src', src);
+                video.currentTime = 0;
+                video.play();
+            }
+        }
+
+        video.addEventListener('enden', () => {
+            flag = null;
+            //비디오 인덱스값을 초기화해서 클릭된 버튼과의 인덱스값을 달리 해서 똑같은 비디오 다시 실행 방지
+        })
+       
+    
+    });
+</script>    
+
+<body>
+    <div class="container">
+        <button id="video1" class="button">video1</button>
+        <button id="video2" class="button">video2</button>
+        <button id="video3" class="button">video3</button>
+        <!-- <a href="" class="control">control</a> -->
+        <video id="my_video" class="media" src="./video/seoul.mp4"></video>
+    </div>
+</body>
+</html>

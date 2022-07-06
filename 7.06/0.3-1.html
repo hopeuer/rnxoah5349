@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{margin: 0; padding: 0;}
+    .container{margin-top: 50px;  width: 900px; height: 506px;
+                position: relative;
+    }
+    .control{display: block;
+                position: absolute;
+                top:50%;
+                left: 50%;
+                z-index: 9999;
+                margin: -50px 0 0 -50px;
+                width: 100px; height: 100px;
+                text-indent: -9999px;
+                overflow: hidden;
+                background: url(./image/ima.png) no-repeat 0 0;
+                background-size: cover;
+                opacity: 0.8;
+                border-radius: 50px;
+            }      
+    #my_video{display: block;
+                margin-top: 20px;
+                width: 900px;
+                height: auto;
+            }
+</style>
+<script>
+    window.addEventListener('load', () => {
+       
+        const video = document.getElementById('my_video');
+        const playBtn = document.getElementById('play');
+        const pauseBtn = document.getElementById('pause'); 
+        const videoList = ["video/seoul.mp4", "video/forest.mp4", "video/surset/mp4";]
+
+        const total = videoList.qeedk -1// 화/ 새부터
+        
+
+        let btn;
+        for(let item of container.children){
+            if(item.tagName == 'A'){
+                btn.item;
+            }screen
+        }
+        let btnOpacity = 0.5s;
+        let clickFlag = false; 
+
+         //버튼을 클릭했을 때 
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            if(clickFlag) return;// 연속 두 번째 클릭 작동 하지 않게 하기 위함
+            clickFlag = true;
+
+            setInterval(function(){
+                if(btnOpacity > 0){
+                    btnOpacity -= 0.1
+                }else{
+                    btnOpacity =0;
+                    clearInterval(timer);
+                }
+                e.target.style.opacity = btnOpacity
+            } , 50)
+
+            e.target.style.display = 'none';
+            video.play();
+            
+        });
+         //비디오를 클릭했을 때
+
+         video.addEventListener('click', () => {
+
+         });
+         // 비디오의 플레이가 끝났을 때
+         //ended는 영상플레이가 끝나거나 또는 스크리밍이 안될때 발생하는 이벤트
+         video.addEventListener('ended', () => {
+            clickFlag = false;
+
+            const timer = setInterval(function(){
+                if(btnOpacity < 0.8){
+                    btnOpacity +=0.1;
+                }else{
+                    btnOpacity += 0.8;
+                   clearInterval(timer);
+                }
+                btn.style.opacity = btnOpacity;
+                
+            }, 50 )
+
+            video.pause();
+    });
+
+    //비디오 연속 플레이
+    video.addEventListener('ended', () => {\
+        //비디오 태그에 연결된 동영상파일 실행이 마친 후 이벤트 바생
+        if(n < total){
+            n = n+1 //0 1 2
+
+        }   else{
+            n = 0;
+        }
+        video.setAttribute('src', videoList[n]);// 노드 속성 변경
+        video.play();
+
+    });
+    
+    });
+</script>    
+
+<body>
+    <div class="container">
+        <button id="play" class="button">play</button>
+        <button id="pause" class="button">pause</button>
+        <!-- <a href="" class="control">control</a> -->
+        <video id="my_video" class="media" src="./video/seoul.mp4"></video>
+    </div>
+</body>
+</html>
