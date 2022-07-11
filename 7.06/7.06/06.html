@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video6</title>
+</head>
+<style>
+    *{margin: 0; padding: 0;}
+    .container{margin: 50px;}
+    .video_area{position: relative;
+                height: 100vh;
+                overflow: hidden;    
+                }
+    .viedo_area video{
+                      position: absolute;
+                      top:0; left: 0;
+                      z-index: -1;
+                      width: 100%;  
+                        }            
+</style>
+<script>
+    window.addEventListener('load', () => {
+        const video = document.getElementById('my_video');
+        const videoList=["video/seoul.mp4", "video/forest.mp4", "video/sunset.mp4"]
+        const total = videoList.length - 1;
+        let n = 0;
+        
+        //자동 실행
+        video.muted = true;
+        video.play();
+        video.addEventListener('ended', ()=>{
+            if(n < total){
+                n = n +1;
+            }else{
+                n =0
+            }
+
+            //인덱스값에 해당되는 비디오 실행
+            video.setAttribute('src', videoList[n]);
+            video.play();
+        })
+      
+    });
+</script>    
+
+<body>
+    <div class="container">
+      <div class="video_area">
+        <video id="my_video" class="media" src="video/seoul.mp4" muted>          
+        </video>
+      </div>
+    </div>
+</body>
+</html>

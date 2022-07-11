@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video7</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .container{margin: 50px;}
+        .top{width: 800px; height: 1000px;
+        background-color: blanchedalmond;  
+                }
+        #my_video{
+                display: block;
+                margin-top: 20px;
+                margin-bottom: 500px;
+                width: 900px;
+                height: auto;
+                }            
+    </style>
+    <script>
+        window.addEventListener('load', () => {
+           const video = document.getElementById('my_video');
+           let t = 0;
+            let timer;
+        
+       window.addEventListener('scroll', videoScrEvent)
+
+       function videoScrEvent(){
+        t=window.pageYOffset;
+        console.log(t)
+        clearTimeout(timer)
+        timer = setInterval(function(){
+
+            if(t < 800){
+                video.pause();
+            }else if(t < 1400){
+                video.play();
+            }else{
+                video.pause();
+            }
+        })
+       }
+
+       videoScrEvent();
+
+       video.addEventListener('ended', ()=> {
+        video.currenttime = 0;
+        video.play();
+       })
+    
+      
+        });
+    </script>    
+</head>
+<body>
+    <div class="top"></div>
+    <div class="container">
+      <video id="my_video" class="media" src="video/seoul.mp4" muted></video>
+    </div>   
+  
+</body>
+</html>
