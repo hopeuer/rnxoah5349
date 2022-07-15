@@ -1,39 +1,45 @@
-import React from 'react';
+import React from 'react'
 import './App.css';
-import Com1 from
-//컴포넌트를 불러오기 설정하고 return안에서 원하는 위치에 <Hello/> 입력
+//라우터 관련 함수
+import {Route,Link} from 'react-router-dom';
+import Home from './home';
+import About from './about';
+import Profiles from './profiles';
+import HistorySample from './historySample';
+
+
+// hostname-> 127.0.0.1 서버주소 www.naver.com
+// port -> 프로그램 넘버
+// router -> 함수객체
+// 컴포넌트 -> 함수
+// SPA ->A태그 사용할 수 없음
+
 
 function App() {
-  const styles = {
-    backgroundColor: 'deepskyblue',
-    color: 'white',
-    fontSize: 40,
-    padding: '1rem'
-  } 
-  
-  const ttl = '리액트 시작10000000000'
-
   return (
-    <div className='wrapper'>
-      <h1 style={{color: 'red'}}>{ttl}</h1>
-      <div style={box}>{ttl}</div>
-      <Com1 text = {}
-    </div>
-  )
+    <div>
+      {/* {
+        다른 주소로 이동시키기
+        <Link to="주소">문자</Link>
+      } */}
+      <ul>
+        <li><Link to="/home">홈</Link></li>
+        <li><Link to="/about">소개</Link></li>
+        <li><Link to="/profiles">프로필목록</Link></li>
+        <li><Link to="/historySample">히스토리</Link></li>
+      </ul>
 
-export default App;
 
-  return (
-  <> 
-     {/* css를 내부로 적용하는 방법 객체(생성자)방식 */}
-    <div style ={{backgroundColor:'red'}}><h1>header</h1></div>
-    <div style ={styles}><h2>section</h2></div>
-    {/* css를 적용하는 방법 : className 속성에 적용 */}
-    <div className='Box'>
-       <h2>box</h2>
+
+      {/* {특정주소에 컴포넌트 연결하는 방법}
+{ <Route path ="주소" component={보여줄 컴포넌트}></Route> } */}
+      <div> 
+       <Route path ="/home" exact={true} component={Home}></Route>
+       <Route path ="/about" component={About}></Route>
+       <Route path ="/profiles" component={Profiles}></Route>
+       <Route path ="/historySample" component={HistorySample}></Route>
+      </div>
     </div>
-    <Hello name='hello' color='skyblue' isSpace={true} />
-  </>   
   );
 }
 
