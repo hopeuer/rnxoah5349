@@ -1,0 +1,17 @@
+.mainimg{width: 100%; height: 450px;
+         background-color: crimson;   
+         background: url(https://images-kr.amoremall.com/fileupload/mainContents/2022/07/15/PC_HM_BANNER_7404_2207_3w.jpg) no-repeat 0 0;
+        }
+
+.contents{width: 100%; height: 3000px;
+            background-color: gray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            }
+
+.contents > div{width: 1600px; height: 300px;
+                background-color: orange;
+                }
+.footer{width: 100%; height: 150px;}                
