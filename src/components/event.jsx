@@ -1,12 +1,11 @@
 import React from "react";
+import Footer from "./footer";
 
 function Event(){
     return(
         <div>
-        <div>
-            Event
-        </div>
-        <footer/>
+            <div>Event</div>
+            <Footer/>
         </div>
     )
 }

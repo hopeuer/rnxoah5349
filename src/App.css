@@ -1,22 +1,21 @@
-.header{width: 100%; height: 120px;
-        background-color: yellowgreen;
-        display: flex;
-        justify-content: center;
+.header{ width:100%; height:120px;
+         background-color: yellowgreen;
+         display:flex;
+         justify-content: center; 
         }
-.header_in{width: 1600px; height: 120px;
-            background-color: yellow;
-            display: flex; justify-content: space-between;
-            }        
-.header_in .logo{width: 150px; height: 120px;
-                  background-color: aquamarine;
-                  display: flex;   
-                  text-align: center; line-height: 120px;   
-                }
-.header_in .nav{width: 800px; height: 120px;
-                display: flex;
-                }
+.header_in{ width:1600px; height:120px;
+         background-color: yellow;
+         display:flex; justify-content: space-between;}
+     
+.header_in .logo{width:150px; height:120px;
+         background-color:aquamarine;
+         text-align:center; line-height:120px}   
+.header_in .nav{width:800px; height:120px;
+                display:flex;  }    
+.header_in .nav li{width: 20%; height:120px;
+                  text-align:center; line-height:120px}          
 
-.header_in .nav li{width: 20%; height: 120px;
-                    text-align: center; line-height: 120px;
-                }
+
+.footer{width:100%; height:150px;
+        background-color:rgb(86, 86, 86);}
 

@@ -1,0 +1,14 @@
+.mainimg{width:100%; height:450px;
+         background-color: tomato;
+         background:url(./images/main.jpg) }
+
+
+.contents{width:100%; height:2000px;
+          background-color:#ccc;
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content:space-around}   
+          
+.contents > div{ width:1600px; height: 300px;
+                 background-color: yellow;}          
