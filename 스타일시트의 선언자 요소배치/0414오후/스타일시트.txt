@@ -1,0 +1,287 @@
+
+
+
+[CSS란?]
+
+
+CSS 또는 캐스케이딩 스타일 시트(Cascading Style Sheet)는 마크업 언어가 실제로 표시되는 방법을 기술하는 언어로, HTML과 XHTML에 주로 쓰이며,
+
+XML에서도 사용할 수 있음.
+
+CSS는 W3C의 표준이며, 레이아웃과 스타일을 정의할 때의 자유도가 높은 언어임.
+ 
+CSS는 웹 사이트에서 사용되는 스타일을 지정하기 위한 언어로, 스타일은 웹의 독창적인 개념이 아니라 웹 이전부터 워드프로세스 등에 사용했던 개념임
+
+.
+
+1996년 W3C의 주도하에 첫 번째 CSS 버전인 CSS Level 1이 발표.
+
+1998년에 CSS Level 2가 등장하면서 대부분의 웹 브라우저들이 CSS Level 2를 지원하기 시작
+
+그 후 CSS Level 2의 버그를 수정한 CSS Level 2.1이 2006년에 발표되면서 현재까지 표준으로 사용되고 있음.
+
+CSS Level 3는 CSS Level 2.1과 달리 모든 명세가 포함된 버전이 아닌 모듈 단위로 개발되고 있으며, 표 준화가 모듈 단위로 진행되고 있음. 이 중 몇
+
+몇 모듈은 현재 Recomendation(권고안) 단계에 있으며, Working Draft(초안) 단계에 머물러 있는 모듈도 있음.
+
+
+
+
+
+[CSS 사용의 의의]
+
+
+스타일 사용의 중요한 의의는 문서의 구조와 표현을 분리할 수 있다는 점을 들 수 있으며 이는 구조와 표현을 분리함으로써 문서 구조의 수정 없이 스타
+
+일의 변경만으로 다양한 표현을 할 수 있다는 것을 의미함.
+
+웹 문서에 있어 구조와 표현의 분리는 워드프로세서 문서보다 중요할 수 있음. 그 이유 중 하나는 웹 문서가 기계적으로 해석될 수 있는 가능성이 높아
+
+지기 때문임. 기계적으로 해석되는 것은 CSS가 아니라 HTML이지만, 구조와 무관한 표현적 요소를 CSS로 분리함으로써 HTML은 간결해지고 더욱 구조 화
+
+될 수 있기 때문임.
+
+
+
+
+[CSS3 웹 브라우저별 접두사(vendor prefix) ]
+
+
+CSS3는 표준안이 아직 확정되지 않은 상태이기 때문에 최신 웹 브라우저들은 CSS3 속성을 실험적으로 제공하고 있음. 이를 위해 속성이나 속성 값 앞에
+
+웹 브라우저별로 접두사(vendor prefix)를 제공하고 있으며 이 접두사의 경우 웹 브라우저별로 다르기 때문에 하나의 속성을 선언하기 위해서는 여러
+
+번의 동 일한 선언을 지정해야 함.
+
+파이어폭스 -moz-
+크롭, 사파리 -webkit-
+오페라 -o-
+익스플로러 -ms-
+
+
+
+
+
+
+
+[스타일 시트의 구성요소]
+
+· 선택자(Selector)
+
+- HTML 문서에서 스타일을 정의할 대상을 의미한다.
+
+- 하나 또는 그 이상의 선택자가 지정될 수 있다.
+
+- 선택자의 나열은 “,”로 한다.
+
+· 선언(Declaration)
+
+- 선택자에게 지정한 스타일을 의미한다.
+
+- 속성(Property)과 속성값(Value)으로 구성된다.
+
+- 속성과 속성값은 “:”으로 구분한다.
+
+- 선언은 반드시 “;”으로 끝나야 한다.
+
+
+
+
+
+1. 전체 선택자(Universal Selector)는 모든 요소를 선택하는 방법으로, "*"를 선택자로 선언.
+
+ex--> *{속성:속성값;}
+
+
+2. 클래스 선택자
+
+클래스 선택자(Class Selector)는 HTML 요소의 class 속성 값을 참조하여 선택하는 방법.
+
+이때 class 속성 값은 하나의 HTML 요소에 여러 개를 지정할 수 있기 때문에 다중 class를 선택자로 지정할 수도 있음.
+
+3. 아이디 선택자
+
+아이디 선택자(ID Selector)는 HTML 요소의 id 속성 값을 참조하여 선택하는 방법.
+
+이때 id 속성 값은 하나의 HTML 문서에 한 번만 사용할 수 있기 때문에 아이디 선택자를 사용하면 유일한 요소를 선택할 수 있음.
+ 
+
+4. 가상 클래스 선택자(Pseudo–classes Selector)
+
+가상 클래스 선택자(Pseudo-classes Selector)는 요소의 상태나 상황에 따라 선택하는 방법으로,
+
+링크의 경우 방문하기 전, 방문한 후, 링크 위에 마우스를 올려놓거나 포커스 시 등의 상황을 선택하여 스타일을 지정할 수 있음.
+
+또한 언어에 따른 구분이나 마크업 구조에 따라 특정 요소를 선택할 수도 있음.
+
+동적 가상 클래스(Dynamic pseudo-classes) –:link, :visited, :active, :hover, :focus
+
+
+   5. 하위 선택자(Descendant Combinator)
+
+하위 선택자(Descendant Combinator) 방식은 선택자와 선택자를 공란으로 선언하며, 선행 선택자의 하위 요소 중 후행 선택자
+
+해당하는 요소를 선택
+
+하는 방법.
+
+
+  6. 자식 선택자(Child Combinator)
+
+자식 선택자(Child Combinators) 방식은 선행 선택자인 부모 요소 하위에 포함된 후행 선택자인 자식 요소를 선택하는 방법.
+
+이때 부모 선택자와 자식 선택자는 ">"로 구분하여 선언.
+
+ex --> #main < div{속성: 속성값;}
+
+
+  7. 형제 선택자(Sibling Combinators)
+
+형제 선택자(Sibling Combinators)는 기본 형제 선택자(General Sibling Combinators)와 인접 형제 선택자(Adjacent Sibling Co
+
+bnators)로 구분할 수 있음.
+
+이때 기본 형제 선택자는 선행 선택자와 후행 선택자를 "+"로 구분하여 선언하고, 인접 형제 선택자는 "~"로 구분하여 선언.
+ex --> 선택자 + 선택자{속성:속성값;}
+       선택자 ~ 선택자{속성:속성값;}
+
+
+  8. 선택자 그룹화
+
+앞에서 살펴본 모든 선택자는 콤마(,)를 사용하여 그룹으로 한 번에 선언할 수 있음. 
+선택자를 그룹으로 선언할 경우, 선언된 모든 선택자에는 동일한 선언이 적용됨.
+
+ex --> 선택자, 선택자{속성:속성값;}
+
+
+
+
+
+
+
+
+
+[스타일 시트 선언방법]
+
+1.내부 스타일 시트 : <head>와 </head>사이에 선언
+
+<style type = "text/css" 또는 “text/JavaScript">
+
+<!--
+
+선택자 or 선택자 { 속성:속성값; 속성:속성값; }
+
+-->
+
+</style>
+
+
+
+2. 외부 스타일 시트 : 외부의 파일로 작성한 후 <LINK> 또는 @import명령을 이용하여 선언하는 방법
+
+<LINK>를 이용하여 연결
+
+- 형식 : <LINK rel = "stylesheet" type = "text/css" href = "파일명“>
+
+@import를 이용하여 연결
+
+- 형식
+
+<style type = "text/css" or "text/JavaScript">
+
+<!--
+
+@import url("파일명“);
+
+-->
+
+</style>
+
+
+
+3. 인라인 스타일 시트 : 일반 html 태그에 스타일을 직접 지정하는 방법
+
+    - <태그 style = "속성:속성값; 속성:속성값“> 문장 </태그>
+
+    - 단, <head>와 <title>에서는 사용할 수 없다.
+
+
+
+
+
+[스타일 시트에서 사용하는 단위]
+
+- 절대적 단위 : in, cm, mm, pt, px
+
+- 상대적 단위 : em,ex
+
+
+
+ 
+
+[ Font 관련 스타일]
+
+- font "값들만“ : 대표속성
+- font-family : 글꼴, 글꼴 이름은 쉼표(,)로 구분, 글꼴 이름이 두 단어 이상이면 큰 따옴표로 묶는다. 브라우저는 앞에 있는 글꼴 부터 보여준다.
+- font-style "normal, italic, oblique" : 기울임꼴을 적용
+- font-variant "normal, small-caps" :
+  small-caps 크기가 작은 대문자
+- font-weight "normal, bold, 100～900" : 글자 굵기
+  normal=400, bold=700, 숫자는 인식 못하는 경우 있음
+- font-size "숫자em(상위 element 크기에 배수), 
+  숫자pt" : 글자 크기 유전되지 않음
+
+ 
+
+[Text 관련 스타일]
+
+- line-height "normal, 숫자, 숫자em, %“ : 줄간격
+- text-indent "숫자em, 퍼센트, 숫자“ : 들여쓰기, 음수사용시 내어쓰기
+
+- text-align "left, right, center, justify" : 텍스트나 이미지 수평정렬
+
+- text-decoration “none, underline, overline, line-through" : 줄 긋기 유전되지 않음
+
+- letter-spacing "normal, 숫자em, 숫자“ : 글자 간격
+
+- text-transform "capitalize, uppercase, lowercase, none" : 영문자 변환 첫글자만 대문자 소문자
+
+․ vertical-align "baseline, sup, sub, middle, text-top, - top, text-bottom, bottom" :텍스트나 이미지 수직정렬
+
+
+
+[색상과 배경에 관련된 스타일]
+
+- color "영문자, RGB“ : 글자 및 밑줄 색
+- background-color "영문자, RGB, transparent" : 배경색
+- background-image "none, url(파일위치)“ : 배경 그림
+- background-repeat "repeat, repeat-x, repeat-y, no-repeat" : 배경이미지 반복 여부
+- background-attachment "scroll, fixed" : 화면이 스크롤 될 때 이동여부
+- background-position "top, bottom, left, center, right, 가로% 세로%“ : 이미지 반복 여부 가로p 세로p
+
+
+[블록과 인라인]
+
+인라인레벨요소
+ img, a, span, strong
+ 주로 내용부분 즉 화면에 표시한 콘텐츠들
+ 한줄에 여러개가 정렬.
+ 자신만 크기를 인식하여 표시함
+ width, height를 적용하여 사용할 수 없다.
+
+블록레벨요소
+ div, p, ul, li, h1~h6........
+ 기본적으로 세로정렬
+ 한줄에는 하나차지합니다 즉 가로폭을 자신이 100%인식함
+ width, height를 적용하여 사용합니다
+
+
+
+[화면에 보이는 방식을 선언하는 스타일]
+display: 화면 보여주는 방식
+
+display:none; 화면에서 숨김.
+display:block; 블록레벨요소로 만듬.
+                   (화면에 보여줌)
+display:inline; 인라인레벨로 만듬
+display:inline-block; 인라인레벨이면서 가로값과 세로값이 적용됨.

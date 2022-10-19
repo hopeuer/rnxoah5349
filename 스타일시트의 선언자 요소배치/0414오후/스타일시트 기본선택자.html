@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일시트</title>
+    <style>
+        /* 전체선택자 : 기본스타일 값을 설정할때 */
+        * {
+            color: skyblue;
+        }
+
+        /* 태그선택자 요소들 해당되는 태그에 모두에게 스타일 설정 */
+        h3 {
+            background-color: gray;
+        }
+
+        p {
+            font-size: 30px;
+        }
+
+        /* 아이디 선택자 요소 하나에게 값을 선언하는 선택자 */
+        #title {
+            font-family: 바탕체;
+            font-size: 30px;
+            font-weight: 900;
+            color: red;
+        }
+
+        /* 클래스 선택자 요소 하나이상에게 값을 선언하는 선택자 */
+        .txt {
+            font-size: 20px;
+            text-decoration: underline;
+            color:greenyellow;
+        }
+
+        /* 하위 선택자 */
+        /* .main li ul li {
+            color: red;
+        } */
+
+        /* 자식선택자 */
+        ul.main>li {
+            color: blue;
+        }
+
+        /* 형제선택자 */
+        /* .ttl01 + h1 {
+            background-color: chocolate;
+        } */
+        /* .ttl01 ~ h1 {
+            background-color: crimson;
+        } */
+        .ttl01~.ttl05 {
+            background-color: orangered;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3 id="title">제목1입니다</h3>
+    <h3>제목2입니다</h3>
+    <h3>제목3입니다</h3>
+    <p class="txt">문단태그1입니다</p>
+    <p class="txt">문단태그2입니다</p>
+    <p>문단태그3입니다</p>
+    <p>문단태그4입니다</p>
+
+    <br><br><br><br><br>
+
+    <ul class="main">
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa
+            <ul class="sub">
+                <li>bbb</li>
+                <li>bbb</li>
+                <li>bbb</li>
+                <li>bbb</li>
+            </ul>
+        </li>
+    </ul>
+
+    <br><br><br><br><br>
+    <h1 class="ttl01">제목리스트1</h1>
+    <h1 class="ttl02">제목리스트2</h1>
+    <h1 class="ttl03">제목리스트3</h1>
+    <h1 class="ttl04">제목리스트4</h1>
+    <h1 class="ttl05">제목리스트5</h1>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
