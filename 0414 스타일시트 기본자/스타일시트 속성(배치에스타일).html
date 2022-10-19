@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일시트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+            float: none;
+            font-size: 30px;
+        }
+
+        div {
+            width: 150px;
+            height: 150px;
+        }
+
+        .box1 {
+            float: left;
+            margin: 200px 150px 0 50px;
+            background-color: blue;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .box2 {
+            float: left;
+            background-color: red;
+        }
+
+        .box3 {
+            /* float: left; */
+            clear: both;
+            float: left;
+            background-color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box1">box01</div>
+    <div class="box2">box02</div>
+    <div class="box3">box03</div>
+
+    <br><br><br><br>
+
+    <!-- <ul>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+    </ul> -->
+
+</body>
+
+</html>

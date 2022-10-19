@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일시트</title>
+    <style>
+        #title {
+            font-family: '맑은고딕';
+            font-size: 16px;
+            color: "#333";
+            font-weight: 900;
+        }
+
+        #title01 {
+            font-variant: small-caps;
+        }
+
+        .text {
+            background-color: antiquewhite;
+            font-size: 20px;
+            line-height: 2;
+            /* 1 = 100% */
+            letter-spacing: 0px;
+            word-spacing: 30px;
+            text-align: center;
+
+
+        }
+
+        .ttt01 {
+            text-decoration: underline;
+            text-transform: none;
+        }
+
+        .ttt02 {
+            text-decoration: line-through;
+            text-transform: capitalize;
+        }
+
+        .ttt03 {
+            text-decoration: overline;
+            text-transform: uppercase;
+        }
+
+        .ttt04 {
+            text-decoration: none;
+            text-transform: lowercase;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3 id="title">제목1입니다</h3>
+    <h3>KIMSOONJO</h3>
+    <h3 id="title01">kimsoonjo</h3>
+    <p class="txt"><i>문단태그1입니다</i></p>
+    <p class="txt"><em>문단태그2입니다</em></p>
+    <p style="font-style: italic;"><b>문단태그3입니다</b></p>
+    <p><strong>문단태그4입니다</strong></p>
+    <br><br><br>
+    <p class="text">
+        <span class="ttt01">aaaaaaaaa</span><br>
+        <span class="ttt02">aaaaaaaaa</span><br>
+        <span class="ttt03">aaaaaaaaa</span><br>
+        <span class="ttt04">aaaaaaaaa</span><br>
+        <span class="ttt05">aaaaaaaaa</span><br>
+    </p>
+    <a href="#" style="text-decoration: none;">버튼입니다</a>
+    <br><br><br><br><br>
+
+
+</body>
+
+</html>
