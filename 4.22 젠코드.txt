@@ -1,0 +1,53 @@
+젠코드
+
+
+ID, CLASS 속성
+
+div#page.section.main
+
+<div id="page" class="section main"></div>
+
+
+커스텀 속성
+
+a[title="hello world"]
+
+<a title="hello world"></a>
+
+
+엘리먼트 복제
+
+li*3
+
+<li></li><li></li><li></li>
+
+
+넘버링 - $ 위치에 값이 1부터 1씩 증가 (1,2,3,4...)
+
+
+li.item$*3
+
+<li class="item1"></li><li class="item2"></li><li class="item3"></li>
+
+li.item$$$*2
+
+<li class="item001"></li><li class="item002"></li>
+
+
+그룹핑
+
+div#page>(div#header>ul#nav>li*4>a)+(div#page>(h1>span)+p*2)+div#footer
+
+
+ID, CLASS 앞에 태그명을 생략하면 DIV로 간주
+
+#content>.section
+
+<div id="content"><div class="section"></div></div>
+
+
+텍스트
+
+p>{click}
+
+<p>click</p>
