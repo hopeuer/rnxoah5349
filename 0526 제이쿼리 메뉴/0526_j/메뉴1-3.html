@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+
+        #nav_area {
+            margin: 100px;
+            width: 500px;
+            height: 60px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        ul.mainmn {
+            width: 500px;
+            height: 30px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        ul.mainmn>li {
+            float: left;
+            width: 125px;
+            height: 30px;
+            border-right: 1px solid #ccc;
+            text-align: center;
+            box-sizing: border-box;
+
+        }
+
+        ul.mainmn>li:last-child {
+            border-right: 0;
+        }
+
+        ul.submn {
+            position: absolute;
+            top: 31px;
+            left: 0;
+            width: 500px;
+            border: 1px solid #ccc;
+        }
+
+        ul.submn li {
+            float: left;
+            height: 30px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        ul.submn li a {
+            font-size: 15px;
+            color: #555555;
+        }
+    </style>
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            //초기값
+            $('.submn').hide();//서브메뉴의 숨김
+
+            $('.mainmn > li').hover(
+                function () {//마우스를 올렸을때
+                    //$(this).find('.submn').show();
+                    //$(this).find('.submn').fadeIn();
+                    //$(this).find('.submn').slideDown();
+                    var i = $(this).index();
+                    $('.submn').eq(i).slideDown();
+                },  //hover에서는 2개의 함수가 필요하고 구분은 ,로 함
+                function () {//마우스를 올렸다가 나갈때
+                    //$(this).find('.submn').hide();
+                    //$(this).find('.submn').fadeOut();
+                    //$(this).find('.submn').slideUp();
+                    $('.submn').slideUp();
+                }
+            );
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="nav_area">
+        <ul class="mainmn">
+            <li>
+                <a href="#">menu1</a>
+            </li>
+            <li>
+                <a href="#">menu2</a>
+            </li>
+            <li>
+                <a href="#">menu3</a>
+            </li>
+            <li>
+                <a href="#">menu4</a>
+            </li>
+        </ul>
+        <!-- 서브메뉴 -->
+        <ul class="submn submn1">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+        <ul class="submn submn2">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+        <ul class="submn submn3">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+        <ul class="submn submn4">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

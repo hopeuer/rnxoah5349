@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul, li{
+            list-style: none;
+        }
+
+        ul.marinmn{
+            margin: 200px;
+            width: 500px; height: 50px;
+            border: 1px solid #ccc;
+        }
+
+        ul.mainmn>li{
+            float: left;
+            width: 125px; height: 50px;
+            border-right: 1px solid #ccc;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        ul.mainmn>li:last-child{
+            border-right: 0;
+        }
+
+        ul.submn {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+
+        ul.submn li {
+            height: 50px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        ul.submn li a {
+            font-size: 15px;
+            color: #555555;
+        }
+    </style>
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.submn').hide();
+
+            $('.mainmn > li').click(function(){
+               //$('.submn').show(); 절대값으로선택했기때문에 전체가 보임
+                //마우스이벤트가 적용되었을때 숨김 애니메이션
+                $('.submn').hide();
+                //$('.submn').slideUp();
+                //$('.submn').fadeOut();
+
+                //$(this).find('.submn').show(700); //숨김효과
+                //$(this).find('.submn').slideDown(700);//아래쪽으로 스륵륵 나타남
+                $(this).find('.submn').fadeIn(700);//투명에 의해서 서서히 나타남
+
+                //애니메이션의 시간은 1000을 1초로합니다
+                //위에 애니메이션 시간을 설정하지않으면 자동으로 1초가 설정됩니다
+            });
+        });
+    </script>  
+</head>
+
+<body>
+    <ul class="mainmn">
+        <li>
+            <a href="#">menu1</a>
+            <ul class="submn">
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">menu2</a>
+            <ul class="submn">
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">menu3</a>
+            <ul class="submn">
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">menu4</a>
+            <ul class="submn">
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>
